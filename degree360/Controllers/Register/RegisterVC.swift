@@ -22,10 +22,18 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     }
     
     @IBAction func clickRegister(_ sender: Any) {
-        if(name.text == nil){
+        
+        guard let userName = name.text else {
             alert("Please type your name");
+            return
         }
-        self.interactor.register(name.text!, photo.image)
+        
+        guard let image = photo.image else {
+            alert("Please type your name");
+            return
+        }
+        
+        self.interactor.register(userName, image)
     }
     
     func showMessage(_ message: String) {
