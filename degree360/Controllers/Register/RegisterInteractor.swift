@@ -22,6 +22,30 @@ class RegisterInteractor : BaseInteractor {
     }
     
     func register(_ name: String, _ photo: UIImage){
-        
+        api.createUser(name, { json, err in
+            if let err = err {
+                self.delegate?.showMessage(err)
+            }else{
+                if json!.hasError {
+                    self.delegate?.showMessage(json!.errorMessage)
+                }else{
+                    self.uploadAvatar(photo)
+                }
+            }
+        })
+    }
+    
+    private func uploadAvatar(_ image : UIImage){
+        api.uploadImage(image, { json, err in
+            if let err = err {
+                self.delegate?.showMessage(err)
+            }else{
+                if json!.hasError {
+                    self.delegate?.showMessage(json!.errorMessage)
+                }else{
+                    (self.delegate as! RegisterInteractorProtocol).successRegister()
+                }
+            }
+        })
     }
 }
