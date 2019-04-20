@@ -54,8 +54,24 @@ class API {
                 c(JSON(res.result!), nil)
             }
         })
+    }
+    
+    func createLesson(_ title : String, _ description : String, _ topics : [String], _ c : @escaping callback){
+        let dic : [String : Any] = ["title" : title,
+                                    "description" : description,
+                                    "author" : UserController.shared.userId,
+                                    "topics" : topics ]
         
         
+        
+        Indigear.run(Constants.serverAddress + "api/lesson", method: .post, headers: headers, body: toJSON(dic), { res in
+            if let err = res.error {
+                c(nil, err.localizedDescription)
+            }else{
+                c(JSON(res.result!), nil)
+            }
+        })
+
     }
     
 }
