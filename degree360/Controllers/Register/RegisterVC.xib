@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterVC" customModule="degree360" customModuleProvider="target">
             <connections>
+                <outlet property="name" destination="fhw-Gm-eSA" id="dwP-lE-ihU"/>
+                <outlet property="photo" destination="RCz-Sv-WNa" id="lUW-1P-Pp2"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Nqo-NL-Adb"/>
             </connections>
         </placeholder>
@@ -35,11 +37,26 @@
                     <rect key="frame" x="178" y="472" width="34" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Start"/>
+                    <connections>
+                        <action selector="clickRegister:" destination="-1" eventType="touchUpInside" id="zal-PW-rYm"/>
+                    </connections>
                 </button>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hFx-6l-dPt">
-                    <rect key="frame" x="172" y="337" width="49" height="31"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsN-lg-skD">
+                    <rect key="frame" x="123" y="327" width="33" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </switch>
+                    <state key="normal" title="male"/>
+                    <connections>
+                        <action selector="checkMale:" destination="-1" eventType="touchUpInside" id="ge3-I4-Ppq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhb-KM-4Rj">
+                    <rect key="frame" x="233" y="327" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="female"/>
+                    <connections>
+                        <action selector="checkFemale:" destination="-1" eventType="touchUpInside" id="lpb-5M-t5L"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

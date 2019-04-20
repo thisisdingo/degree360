@@ -9,6 +9,25 @@
 import UIKit
 
 class RegisterVC : UIViewController, RegisterInteractorProtocol {
+    
+    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var name: UITextField!
+    
+    @IBAction func checkMale(_ sender: UIButton) {
+        photo.image = #imageLiteral(resourceName: "male")
+    }
+    
+    @IBAction func checkFemale(_ sender: Any) {
+        photo.image = #imageLiteral(resourceName: "female")
+    }
+    
+    @IBAction func clickRegister(_ sender: Any) {
+        if(name.text == nil){
+            alert("Please type your name");
+        }
+        self.interactor.register(name.text!, photo)
+    }
+    
     func showMessage(_ message: String) {
         
     }

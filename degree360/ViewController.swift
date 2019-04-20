@@ -16,9 +16,13 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        let vc = RegisterVC.getVC()
+        let isAuth = UserController.shared.isAuth
         
-        present(vc, animated: true, completion: nil)
+        if(!isAuth){
+            let vc = RegisterVC.getVC()
+            present(vc, animated: true, completion: nil)
+        }
+        
     }
 
 }
