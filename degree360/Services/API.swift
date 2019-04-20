@@ -7,12 +7,21 @@
 //
 
 import SwiftyJSON
+import UIKit
 
 typealias callback = (_ json : JSON) -> Void
 
 class API {
     
-    func uploadImage(){
+    func toJSON(_ dic : [String : Any]) -> Data {
+        return try! JSONSerialization.data(withJSONObject: dic, options: [.sortedKeys])
+    }
+    
+    func uploadImage(_ image : UIImage){
+        
+        let data = ["image" : image.jpegData(compressionQuality: 0.5)]
+        
+        
         
         
     }
