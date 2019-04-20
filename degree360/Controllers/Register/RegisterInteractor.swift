@@ -29,6 +29,8 @@ class RegisterInteractor : BaseInteractor {
                 if json!.hasError {
                     self.delegate?.showMessage(json!.errorMessage)
                 }else{
+                    let userId = json!["id"].intValue
+                    UserController.shared.userId = userId
                     self.uploadAvatar(photo)
                 }
             }
