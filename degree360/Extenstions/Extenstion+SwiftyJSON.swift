@@ -11,11 +11,11 @@ import SwiftyJSON
 extension JSON {
     
     var hasError : Bool {
-        return !self["error"].stringValue.isEmpty
+        return !self["error"].stringValue.isEmpty || !self["exception"].stringValue.isEmpty
     }
     
     var errorMessage : String {
-        return self["error"].stringValue
+        return self["error"].stringValue + self["exception"].stringValue
     }
     
 }

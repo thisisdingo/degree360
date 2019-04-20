@@ -59,7 +59,7 @@ class API {
     func createLesson(_ title : String, _ description : String, _ topics : [String], _ c : @escaping callback){
         let dic : [String : Any] = ["title" : title,
                                     "description" : description,
-                                    "author" : UserController.shared.userId,
+                                    "user_id" : UserController.shared.userId,
                                     "topics" : topics ]
         
         
