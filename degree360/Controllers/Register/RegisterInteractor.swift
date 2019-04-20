@@ -15,7 +15,7 @@ protocol RegisterInteractorProtocol : BaseInteractorProtocol {
 class RegisterInteractor : BaseInteractor {
     
     
-    init(_ delegate : BaseInteractorProtocol){
+    init(_ delegate : RegisterInteractorProtocol){
         super.init()
 
         self.delegate = delegate

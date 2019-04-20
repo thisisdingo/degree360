@@ -9,13 +9,13 @@
 import Foundation
 
 protocol LessonInteractorProtocol : BaseInteractorProtocol{
-    //func successRegister()
+    func success()
 }
 
 class LessonInteractor : BaseInteractor {
     
     
-    init(_ delegate : BaseInteractorProtocol){
+    init(_ delegate : LessonInteractorProtocol){
         super.init()
         
         self.delegate = delegate
