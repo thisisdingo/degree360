@@ -9,6 +9,12 @@
 import UIKit
 
 class LessonCreateVC : UIViewController, LessonCreateInteractorProtocol {
+    func successCreate() {
+        
+    }
+    
+    var interactor : LessonCreateInteractor!
+    
     func successCreate(_ lesson: Lesson) {
         
     }
@@ -25,6 +31,18 @@ class LessonCreateVC : UIViewController, LessonCreateInteractorProtocol {
     func hideLoading() {
         
     }
+    
+    override func viewDidLoad() {
+        self.interactor = LessonCreateInteractor(self)
+        
+        initViews()
+    }
+    
+    func initViews(){
+        
+        
+    }
+    
     
     static func getVC() -> LessonCreateVC{
         return LessonCreateVC.init(nibName: "LessonCreateVC", bundle: nil)
