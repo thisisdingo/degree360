@@ -7,6 +7,7 @@
 //
 
 import SwiftyJSON
+import Indigear
 import UIKit
 
 typealias callback = (_ json : JSON?, _ error : String?) -> Void
@@ -17,6 +18,9 @@ class API {
         return try! JSONSerialization.data(withJSONObject: dic, options: [.sortedKeys])
     }
     
+    let headers = ["Content-Type" : "application/json",
+                   "Accept" : "application/json"]
+
     func uploadImage(_ image : UIImage, _ c : @escaping callback){
         
         guard let imageData = image.jpegData(compressionQuality: 0.5) else {
@@ -24,17 +28,31 @@ class API {
             return
         }
         
-        let data = ["image" : imageData.base64EncodedString(),
-                    "uid" : UserController.shared.userId] as [String : Any]
+        let dic = ["photo" : imageData.base64EncodedString(),
+                   "uid" : UserController.shared.userId] as [String : Any]
         
-        
-        
-        
+        let json = toJSON(dic)
+
+        Indigear.run(Constants.serverAddress + "api/user/avatar", method: .post, headers: headers, body: json, { res in
+            if let err = res.error {
+                c(nil, err.localizedDescription)
+            }else{
+                c(JSON(res.result!), nil)
+            }
+        })
     }
     
-    func createUser(_ name : String){
+    func createUser(_ name : String, _ c : @escaping callback){
         
+        let dic = ["name" : name]
         
+        Indigear.run(Constants.serverAddress + "api/user", method: .post, headers: headers, body: toJSON(dic), { res in
+            if let err = res.error {
+                c(nil, err.localizedDescription)
+            }else{
+                c(JSON(res.result!), nil)
+            }
+        })
         
         
     }

@@ -19,7 +19,12 @@ protocol BaseInteractorProtocol : class {
 class BaseInteractor {
     
     weak var delegate : BaseInteractorProtocol?
+    var api : API!
     
+    
+    init() {
+        self.api = API.init()
+    }
     
     
 }

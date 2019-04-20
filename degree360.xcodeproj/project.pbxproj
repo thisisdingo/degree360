@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652A8F44226AECAB00D5CC24 /* Extenstion+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F43226AECAB00D5CC24 /* Extenstion+SwiftyJSON.swift */; };
 		65EC7C4E226ACFB800D69565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C4D226ACFB800D69565 /* AppDelegate.swift */; };
 		65EC7C50226ACFB800D69565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C4F226ACFB800D69565 /* ViewController.swift */; };
 		65EC7C53226ACFB800D69565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65EC7C51226ACFB800D69565 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		368A89DE32932A97DE352BC1 /* Pods-degree360.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.release.xcconfig"; path = "Target Support Files/Pods-degree360/Pods-degree360.release.xcconfig"; sourceTree = "<group>"; };
+		652A8F43226AECAB00D5CC24 /* Extenstion+SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extenstion+SwiftyJSON.swift"; sourceTree = "<group>"; };
 		65EC7C4A226ACFB800D69565 /* degree360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = degree360.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EC7C4D226ACFB800D69565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65EC7C4F226ACFB800D69565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				65EC7C6D226AE4DF00D69565 /* Extenstion+UIViewController.swift */,
+				652A8F43226AECAB00D5CC24 /* Extenstion+SwiftyJSON.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				65EC7C50226ACFB800D69565 /* ViewController.swift in Sources */,
 				65EC7C63226AD48F00D69565 /* BaseInteractor.swift in Sources */,
 				65EC7C4E226ACFB800D69565 /* AppDelegate.swift in Sources */,
+				652A8F44226AECAB00D5CC24 /* Extenstion+SwiftyJSON.swift in Sources */,
 				E18C079C226AD62400399075 /* RegisterInteractor.swift in Sources */,
 				65EC7C6E226AE4DF00D69565 /* Extenstion+UIViewController.swift in Sources */,
 				65EC7C56226ACFB800D69565 /* degree360.xcdatamodeld in Sources */,
