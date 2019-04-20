@@ -9,6 +9,14 @@
 import UIKit
 
 class LessonCreateVC : UIViewController, LessonCreateInteractorProtocol {
+    
+    @IBOutlet weak var lessonTitle: UITextField!
+    @IBOutlet weak var lessonDescription: UITextField!
+    
+    @IBAction func createBtn(_ sender: UIButton) {
+        interactor.createLesson(lessonTitle.text!, lessonDescription.text!, ["topic1", "topic2", "Topic3"])
+    }
+    
     func successCreate() {
         
     }
@@ -16,9 +24,8 @@ class LessonCreateVC : UIViewController, LessonCreateInteractorProtocol {
     var interactor : LessonCreateInteractor!
     
     func successCreate(_ lesson: Lesson) {
-        
+        self.navigationController?.popToRootViewController(animated: true)
     }
-    
     
     func showMessage(_ message: String) {
         
@@ -39,7 +46,6 @@ class LessonCreateVC : UIViewController, LessonCreateInteractorProtocol {
     }
     
     func initViews(){
-        
         
     }
     

@@ -37,6 +37,11 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
         initViews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        interactor.getLessons()
+    }
+    
     static func getVC() -> LessonVC{
         return LessonVC.init(nibName: "LessonVC", bundle: nil)
     }
