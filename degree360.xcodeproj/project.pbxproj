@@ -13,9 +13,11 @@
 		65EC7C56226ACFB800D69565 /* degree360.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C54226ACFB800D69565 /* degree360.xcdatamodeld */; };
 		65EC7C58226ACFB900D69565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65EC7C57226ACFB900D69565 /* Assets.xcassets */; };
 		65EC7C5B226ACFB900D69565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65EC7C59226ACFB900D69565 /* LaunchScreen.storyboard */; };
+		8799A10C9E860347D1651CC0 /* Pods_degree360.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7984BA49C568AB59F042573 /* Pods_degree360.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		368A89DE32932A97DE352BC1 /* Pods-degree360.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.release.xcconfig"; path = "Target Support Files/Pods-degree360/Pods-degree360.release.xcconfig"; sourceTree = "<group>"; };
 		65EC7C4A226ACFB800D69565 /* degree360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = degree360.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EC7C4D226ACFB800D69565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65EC7C4F226ACFB800D69565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		65EC7C57226ACFB900D69565 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65EC7C5A226ACFB900D69565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65EC7C5C226ACFB900D69565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7984BA49C568AB59F042573 /* Pods_degree360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_degree360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.debug.xcconfig"; path = "Target Support Files/Pods-degree360/Pods-degree360.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8799A10C9E860347D1651CC0 /* Pods_degree360.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3326D8513C35F3C6145AB70F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */,
+				368A89DE32932A97DE352BC1 /* Pods-degree360.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		65EC7C41226ACFB800D69565 = {
 			isa = PBXGroup;
 			children = (
 				65EC7C4C226ACFB800D69565 /* degree360 */,
 				65EC7C4B226ACFB800D69565 /* Products */,
+				3326D8513C35F3C6145AB70F /* Pods */,
+				F790E9930D818B601EF481E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = degree360;
 			sourceTree = "<group>";
 		};
+		F790E9930D818B601EF481E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7984BA49C568AB59F042573 /* Pods_degree360.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65EC7C5F226ACFB900D69565 /* Build configuration list for PBXNativeTarget "degree360" */;
 			buildPhases = (
+				D5511FE9E3D881D81F4907DC /* [CP] Check Pods Manifest.lock */,
 				65EC7C46226ACFB800D69565 /* Sources */,
 				65EC7C47226ACFB800D69565 /* Frameworks */,
 				65EC7C48226ACFB800D69565 /* Resources */,
+				EFAAD1CC7E3053EC1A099B6B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D5511FE9E3D881D81F4907DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-degree360-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFAAD1CC7E3053EC1A099B6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-degree360/Pods-degree360-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Indigear/Indigear.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Indigear.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-degree360/Pods-degree360-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		65EC7C46226ACFB800D69565 /* Sources */ = {
@@ -284,6 +360,7 @@
 		};
 		65EC7C60226ACFB900D69565 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +379,7 @@
 		};
 		65EC7C61226ACFB900D69565 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 368A89DE32932A97DE352BC1 /* Pods-degree360.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
