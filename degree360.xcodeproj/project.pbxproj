@@ -19,6 +19,7 @@
 		8799A10C9E860347D1651CC0 /* Pods_degree360.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7984BA49C568AB59F042573 /* Pods_degree360.framework */; };
 		E18C079A226AD5FE00399075 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0799226AD5FE00399075 /* RegisterVC.swift */; };
 		E18C079C226AD62400399075 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C079B226AD62400399075 /* RegisterInteractor.swift */; };
+		E1B61871226ADF1F008B7B63 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B61870226ADF1F008B7B63 /* RegisterVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B3D1AFF69096D691CFE97008 /* Pods-degree360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.debug.xcconfig"; path = "Pods/Target Support Files/Pods-degree360/Pods-degree360.debug.xcconfig"; sourceTree = "<group>"; };
 		E18C0799226AD5FE00399075 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		E18C079B226AD62400399075 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		E1B61870226ADF1F008B7B63 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
 		E7984BA49C568AB59F042573 /* Pods_degree360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_degree360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.debug.xcconfig"; path = "Target Support Files/Pods-degree360/Pods-degree360.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 			children = (
 				E18C0799226AD5FE00399075 /* RegisterVC.swift */,
 				E18C079B226AD62400399075 /* RegisterInteractor.swift */,
+				E1B61870226ADF1F008B7B63 /* RegisterVC.xib */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65EC7C5B226ACFB900D69565 /* LaunchScreen.storyboard in Resources */,
+				E1B61871226ADF1F008B7B63 /* RegisterVC.xib in Resources */,
 				65EC7C58226ACFB900D69565 /* Assets.xcassets in Resources */,
 				65EC7C53226ACFB800D69565 /* Main.storyboard in Resources */,
 			);

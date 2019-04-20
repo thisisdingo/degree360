@@ -35,4 +35,8 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
         //self.interactor.register(<#T##name: String##String#>, <#T##photo: UIImage##UIImage#>)
     }
     
+    static func getVC() -> RegisterVC{
+        return RegisterVC.init(nibName: "RegisterVC", bundle: nil)
+    }
+    
 }
