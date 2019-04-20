@@ -16,6 +16,7 @@
 		65EC7C63226AD48F00D69565 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C62226AD48F00D69565 /* BaseInteractor.swift */; };
 		65EC7C67226AD80000D69565 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C66226AD80000D69565 /* API.swift */; };
 		65EC7C69226ADAD700D69565 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C68226ADAD700D69565 /* Constants.swift */; };
+		65EC7C6B226ADF7700D69565 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C6A226ADF7700D69565 /* UserController.swift */; };
 		8799A10C9E860347D1651CC0 /* Pods_degree360.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7984BA49C568AB59F042573 /* Pods_degree360.framework */; };
 		E18C079A226AD5FE00399075 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0799226AD5FE00399075 /* RegisterVC.swift */; };
 		E18C079C226AD62400399075 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C079B226AD62400399075 /* RegisterInteractor.swift */; };
@@ -34,6 +35,7 @@
 		65EC7C62226AD48F00D69565 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		65EC7C66226AD80000D69565 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		65EC7C68226ADAD700D69565 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		65EC7C6A226ADF7700D69565 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		97CFD8F344D294271CE59BC2 /* Pods-degree360.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.release.xcconfig"; path = "Pods/Target Support Files/Pods-degree360/Pods-degree360.release.xcconfig"; sourceTree = "<group>"; };
 		B3D1AFF69096D691CFE97008 /* Pods-degree360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.debug.xcconfig"; path = "Pods/Target Support Files/Pods-degree360/Pods-degree360.debug.xcconfig"; sourceTree = "<group>"; };
 		E18C0799226AD5FE00399075 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				65EC7C66226AD80000D69565 /* API.swift */,
+				65EC7C6A226ADF7700D69565 /* UserController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65EC7C6B226ADF7700D69565 /* UserController.swift in Sources */,
 				65EC7C50226ACFB800D69565 /* ViewController.swift in Sources */,
 				65EC7C63226AD48F00D69565 /* BaseInteractor.swift in Sources */,
 				65EC7C4E226ACFB800D69565 /* AppDelegate.swift in Sources */,
