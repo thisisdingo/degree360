@@ -25,7 +25,7 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
         if(name.text == nil){
             alert("Please type your name");
         }
-        self.interactor.register(name.text!, photo)
+        self.interactor.register(name.text!, photo.image)
     }
     
     func showMessage(_ message: String) {
