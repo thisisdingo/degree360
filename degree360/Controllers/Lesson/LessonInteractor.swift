@@ -34,7 +34,15 @@ class LessonInteractor : BaseInteractor {
                 if res!.hasError {
                     self.delegate?.showMessage(res!.errorMessage)
                 }else{
-                    (self.delegate as? LessonInteractorProtocol)?.showLessons(res!.arrayValue.map({ Lesson($0["lesson"]) }))
+                    
+                    let lessons = res!.arrayValue.map({ Lesson($0["lesson"]) })
+                    
+                    
+                    if lessons.isEmpty {
+                        (self.delegate as? LessonInteractorProtocol)?.showNoLessons()
+                    }else{
+                        (self.delegate as? LessonInteractorProtocol)?.showLessons(lessons)
+                    }
                 }
             }
         })
