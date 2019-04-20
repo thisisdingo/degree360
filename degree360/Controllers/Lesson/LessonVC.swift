@@ -73,8 +73,8 @@ extension LessonVC : UITableViewDelegate, UITableViewDataSource {
         let lesson = lessons[indexPath.row]
         
         cell.lessonName.text = lesson.title
-        cell.topicsCount.text = String(lesson.topics.count)
-        cell.myLessonScore.progress = 99
+        cell.topicsCount.text = "There are \(lesson.topics.count) topics"
+        cell.myLessonScore.progress = Float(1/100 * Int.random(in: 1 ..< 100))
         
         return cell
     }
