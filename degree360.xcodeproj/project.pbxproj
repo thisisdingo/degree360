@@ -12,6 +12,7 @@
 		652A8F48226B00C800D5CC24 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F47226B00C800D5CC24 /* Lesson.swift */; };
 		652A8F4B226B01A800D5CC24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F4A226B01A800D5CC24 /* User.swift */; };
 		652A8F4D226B01FD00D5CC24 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F4C226B01FD00D5CC24 /* Extenstions.swift */; };
+		652A8F55226B08C900D5CC24 /* degree360Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F54226B08C900D5CC24 /* degree360Tests.swift */; };
 		65EC7C4E226ACFB800D69565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C4D226ACFB800D69565 /* AppDelegate.swift */; };
 		65EC7C50226ACFB800D69565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C4F226ACFB800D69565 /* ViewController.swift */; };
 		65EC7C53226ACFB800D69565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65EC7C51226ACFB800D69565 /* Main.storyboard */; };
@@ -43,6 +44,16 @@
 		E1B61892226AFEA8008B7B63 /* LessonCreateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B61891226AFEA8008B7B63 /* LessonCreateVC.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		652A8F57226B08C900D5CC24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65EC7C42226ACFB800D69565 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65EC7C49226ACFB800D69565;
+			remoteInfo = degree360;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		368A89DE32932A97DE352BC1 /* Pods-degree360.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.release.xcconfig"; path = "Target Support Files/Pods-degree360/Pods-degree360.release.xcconfig"; sourceTree = "<group>"; };
 		652A8F43226AECAB00D5CC24 /* Extenstion+SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extenstion+SwiftyJSON.swift"; sourceTree = "<group>"; };
@@ -50,6 +61,9 @@
 		652A8F47226B00C800D5CC24 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		652A8F4A226B01A800D5CC24 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		652A8F4C226B01FD00D5CC24 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
+		652A8F52226B08C800D5CC24 /* degree360Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = degree360Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		652A8F54226B08C900D5CC24 /* degree360Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = degree360Tests.swift; sourceTree = "<group>"; };
+		652A8F56226B08C900D5CC24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65EC7C4A226ACFB800D69565 /* degree360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = degree360.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EC7C4D226ACFB800D69565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65EC7C4F226ACFB800D69565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +101,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		652A8F4F226B08C800D5CC24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65EC7C47226ACFB800D69565 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,10 +139,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		652A8F53226B08C800D5CC24 /* degree360Tests */ = {
+			isa = PBXGroup;
+			children = (
+				652A8F54226B08C900D5CC24 /* degree360Tests.swift */,
+				652A8F56226B08C900D5CC24 /* Info.plist */,
+			);
+			path = degree360Tests;
+			sourceTree = "<group>";
+		};
 		65EC7C41226ACFB800D69565 = {
 			isa = PBXGroup;
 			children = (
 				65EC7C4C226ACFB800D69565 /* degree360 */,
+				652A8F53226B08C800D5CC24 /* degree360Tests */,
 				65EC7C4B226ACFB800D69565 /* Products */,
 				3326D8513C35F3C6145AB70F /* Pods */,
 				F790E9930D818B601EF481E0 /* Frameworks */,
@@ -132,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				65EC7C4A226ACFB800D69565 /* degree360.app */,
+				652A8F52226B08C800D5CC24 /* degree360Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,6 +299,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		652A8F51226B08C800D5CC24 /* degree360Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 652A8F5B226B08C900D5CC24 /* Build configuration list for PBXNativeTarget "degree360Tests" */;
+			buildPhases = (
+				652A8F4E226B08C800D5CC24 /* Sources */,
+				652A8F4F226B08C800D5CC24 /* Frameworks */,
+				652A8F50226B08C800D5CC24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				652A8F58226B08C900D5CC24 /* PBXTargetDependency */,
+			);
+			name = degree360Tests;
+			productName = degree360Tests;
+			productReference = 652A8F52226B08C800D5CC24 /* degree360Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		65EC7C49226ACFB800D69565 /* degree360 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65EC7C5F226ACFB900D69565 /* Build configuration list for PBXNativeTarget "degree360" */;
@@ -296,6 +346,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = pizza;
 				TargetAttributes = {
+					652A8F51226B08C800D5CC24 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 65EC7C49226ACFB800D69565;
+					};
 					65EC7C49226ACFB800D69565 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -315,11 +369,19 @@
 			projectRoot = "";
 			targets = (
 				65EC7C49226ACFB800D69565 /* degree360 */,
+				652A8F51226B08C800D5CC24 /* degree360Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		652A8F50226B08C800D5CC24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65EC7C48226ACFB800D69565 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -388,6 +450,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		652A8F4E226B08C800D5CC24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				652A8F55226B08C900D5CC24 /* degree360Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65EC7C46226ACFB800D69565 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,6 +491,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		652A8F58226B08C900D5CC24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65EC7C49226ACFB800D69565 /* degree360 */;
+			targetProxy = 652A8F57226B08C900D5CC24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		65EC7C51226ACFB800D69565 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -441,6 +519,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		652A8F59226B08C900D5CC24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LN73Q598ZB;
+				INFOPLIST_FILE = degree360Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.example.degree360Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/degree360.app/degree360";
+			};
+			name = Debug;
+		};
+		652A8F5A226B08C900D5CC24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LN73Q598ZB;
+				INFOPLIST_FILE = degree360Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.example.degree360Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/degree360.app/degree360";
+			};
+			name = Release;
+		};
 		65EC7C5D226ACFB900D69565 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -598,6 +716,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		652A8F5B226B08C900D5CC24 /* Build configuration list for PBXNativeTarget "degree360Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				652A8F59226B08C900D5CC24 /* Debug */,
+				652A8F5A226B08C900D5CC24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		65EC7C45226ACFB800D69565 /* Build configuration list for PBXProject "degree360" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
