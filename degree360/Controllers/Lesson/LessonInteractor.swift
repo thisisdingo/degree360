@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LessonInteractorProtocol : BaseInteractorProtocol{
-    func success()
+    func showLessons( _ lessons : [Lesson])
 }
 
 class LessonInteractor : BaseInteractor {
@@ -20,8 +20,26 @@ class LessonInteractor : BaseInteractor {
         
         self.delegate = delegate
     }
+
     
-//    func register(_ name: String, _ photo: UIImage){
-//        
-//    }
+    func getLessons(){
+        self.delegate?.startLoading()
+        
+        api.getLessons({ res, err in
+            self.delegate?.hideLoading()
+            
+            if let err = err {
+                self.delegate?.showMessage(err)
+            }else{
+                if res!.hasError {
+                    self.delegate?.showMessage(res!.errorMessage)
+                }else{
+                    (self.delegate as? LessonInteractorProtocol)?.showLessons(res!.arrayValue.map({ Lesson($0) }))
+                }
+            }
+        })
+        
+    }
+    
+    
 }
