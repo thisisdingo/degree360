@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             let vc = RegisterVC.getVC()
             present(vc, animated: true, completion: nil)
         }else{
-            let vc = LessonVC.getVC()
+            let vc = Helpers.getNavController(LessonVC.getVC())
             present(vc, animated: true, completion: nil)
         }
         

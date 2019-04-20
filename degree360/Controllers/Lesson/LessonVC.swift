@@ -29,9 +29,24 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     
     override func viewDidLoad() {
         self.interactor = RegisterInteractor(self)
+        
+        initViews()
     }
     
     static func getVC() -> LessonVC{
         return LessonVC.init(nibName: "LessonVC", bundle: nil)
     }
+    
+    func initViews(){
+        
+        let createBtn = UIBarButtonItem(title: "SS", style: .done, target: self, action: #selector(self.addButtonTapped(_:)))
+        self.navigationItem.rightBarButtonItem = createBtn
+        
+    }
+    
+    @objc func addButtonTapped(_ sender : UIBarButtonItem){
+        let vc = Helpers.getNavController(LessonCreateVC.getVC())
+        present(vc, animated: true, completion: nil)
+    }
+    
 }
