@@ -23,12 +23,13 @@ class API {
 
     func uploadImage(_ image : UIImage, _ c : @escaping callback){
         
-        guard let imageData = image.jpegData(compressionQuality: 0.5) else {
+        guard let imageData = image.pngData() else {
             c(nil, "Не удалось сконвертировать изображение в JPG")
             return
         }
         
-        let dic = ["photo" : imageData.base64EncodedString(),
+        
+        let dic = ["photo" : "data:image/png;base64,"+imageData.base64EncodedString(),
                    "uid" : UserController.shared.userId] as [String : Any]
         
         let json = toJSON(dic)

@@ -51,7 +51,7 @@ class RegisterInteractor : BaseInteractor {
                     self.delegate?.showMessage(json!.errorMessage)
                 }else{
                     self.delegate?.hideLoading()
-                    (self.delegate as! RegisterInteractorProtocol).successRegister()
+                    (self.delegate as? RegisterInteractorProtocol)?.successRegister()
                 }
             }
         })
