@@ -18,6 +18,16 @@ struct Lesson {
     var updated : Date
     var topics : [String]
     
+    init() {
+        self.id = ""
+        self.title = ""
+        self.description = ""
+        self.author = User()
+        self.created = Date()
+        self.updated = Date()
+        self.topics = [String]()
+    }
+    
     init(_ json : JSON) {
         self.id = json["id"].stringValue
         self.title = json["title"].stringValue

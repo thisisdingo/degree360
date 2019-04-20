@@ -10,12 +10,20 @@ import XCTest
 @testable import degree360
 
 class degree360Tests: XCTestCase {
+    
+    var lesson = Lesson()
 
     var createLessonExp : XCTestExpectation!
-    
+    var getLessonsExp : XCTestExpectation!
+
     
     override func setUp() {
-        createLessonExp = expectation(description: "createLessonExp")
+        UserController.shared.userId = "1"
+
+        lesson.title = "ios app test"
+        lesson.description = "ios app test"
+        lesson.topics = ["ios app test", "ios app test", "ios app test", "ios app test"]
+        
 
     }
 
@@ -27,19 +35,36 @@ class degree360Tests: XCTestCase {
 
     
     func testLessonCreate(){
-        UserController.shared.userId = "1"
+        createLessonExp = expectation(description: "createLessonExp")
+
         let interactor = LessonCreateInteractor.init(self)
-        interactor.createLesson("iOS Test", "tesDescr", ["topic1", "topic2", "topic3"])
+        interactor.createLesson(lesson.title, lesson.description, lesson.topics)
         
         waitForExpectations(timeout: 4, handler: nil)
     }
     
-}
-extension degree360Tests : LessonCreateInteractorProtocol {
-    func successCreate(_ lesson: Lesson) {
-        print(lesson)
-        createLessonExp.fulfill()
+    func testGetLessons(){
+        getLessonsExp = expectation(description: "getLessonsExp")
+
+        let interactor = LessonInteractor.init(self)
+        interactor.getLessons()
+        
+        waitForExpectations(timeout: 4, handler: nil)
+
     }
+    
+
+}
+
+extension degree360Tests : LessonInteractorProtocol {
+    func showLessons(_ lessons: [Lesson]) {
+        print(lessons)
+        getLessonsExp.fulfill()
+    }
+
+}
+
+extension degree360Tests : BaseInteractorProtocol {
     
     func showMessage(_ message: String) {
         print(message)
@@ -52,5 +77,15 @@ extension degree360Tests : LessonCreateInteractorProtocol {
     func hideLoading() {
         
     }
+    
+}
+
+extension degree360Tests : LessonCreateInteractorProtocol {
+    func successCreate(_ lesson: Lesson) {
+        XCTAssert(self.lesson.title == lesson.title, "Error")
+        createLessonExp.fulfill()
+    }
+    
+
     
 }
