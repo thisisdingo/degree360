@@ -15,7 +15,7 @@ class UserController {
     let defaults = UserDefaults.standard
     
     var isAuth : Bool {
-        return defaults.string(forKey: "userId") != nil
+        return !userId.isEmpty
     }
     
     var userId : String {
@@ -28,5 +28,8 @@ class UserController {
         }
     }
     
+    func dropUserData(){
+        userId = ""
+    }
     
 }

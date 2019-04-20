@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol TopicInteractorProtocol : BaseInteractorProtocol {
+protocol LessonSignleVCInteractorProtocol : BaseInteractorProtocol {
 
 }
 
-class TopicInteractor : BaseInteractor{
+class LessonSignleVCInteractor : BaseInteractor{
     
-    init(_ delegate : TopicInteractorProtocol){
+    init(_ delegate : LessonSignleVCInteractorProtocol){
         super.init()
         
         self.delegate = delegate

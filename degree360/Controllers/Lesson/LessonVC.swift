@@ -108,4 +108,12 @@ extension LessonVC : UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = LessonSignleVC.getVC()
+        vc.lesson = lessons[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

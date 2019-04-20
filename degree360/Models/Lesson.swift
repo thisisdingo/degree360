@@ -17,6 +17,7 @@ struct Lesson {
     var created : Date
     var updated : Date
     var topics : [Topic]
+    var friends : [User]
     
     init() {
         self.id = ""
@@ -26,6 +27,7 @@ struct Lesson {
         self.created = Date()
         self.updated = Date()
         self.topics = [Topic]()
+        self.friends = [User]()
     }
     
     init(_ json : JSON) {
@@ -36,6 +38,7 @@ struct Lesson {
         self.created = json["created"].stringValue.date
         self.updated = json["updated"].stringValue.date
         self.topics = json["topics"].arrayValue.map({ return Topic($0) })
+        self.friends = json["friends"].arrayValue.map({ return User($0["user"]) })
     }
     
 }
