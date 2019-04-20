@@ -12,6 +12,8 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var name: UITextField!
+    var imagePicker: UIImagePickerController!
+    
     
     @IBAction func checkMale(_ sender: UIButton) {
         photo.image = #imageLiteral(resourceName: "male")
@@ -37,7 +39,7 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     }
     
     func showMessage(_ message: String) {
-        alert(message);
+        alert(message)
     }
     
     func startLoading() {
@@ -56,10 +58,56 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     
     override func viewDidLoad() {
         self.interactor = RegisterInteractor(self)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.takePhoto))
+        photo.addGestureRecognizer(tap)
+        photo.isUserInteractionEnabled = true
     }
     
     static func getVC() -> RegisterVC{
         return RegisterVC.init(nibName: "RegisterVC", bundle: nil)
     }
+    
+    @objc func takePhoto(_ sender: Any) {
+
+        
+        let alert = UIAlertController(title: "Choose variant", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "From camera", style: .default, handler: { [weak self] _ in
+            self?.chooseImage(true)
+        }))
+        alert.addAction(UIAlertAction(title: "From gallery", style: .default, handler: { [weak self] _ in
+            self?.chooseImage(false)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    func chooseImage(_ fromCamera : Bool) {
+        imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = fromCamera ? .camera : .photoLibrary
+
+        present(imagePicker, animated: true, completion: nil)
+    }
+}
+
+
+extension RegisterVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+        //photo.image = info[.originalImage] as? UIImage
+        guard let image = info[.originalImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        
+        // print out the image size as a test
+        print(image.size)
+        photo.image = image
+    }
+    
     
 }
