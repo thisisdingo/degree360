@@ -9,11 +9,14 @@
 import UIKit
 
 class LessonVC : UIViewController, LessonInteractorProtocol {
-    
+
     var interactor : LessonInteractor!
     @IBOutlet weak var tableView: UITableView!
-    
     var lessons = [Lesson]()
+    
+    func showNoLessons() {
+        
+    }
     
     func showLessons(_ lessons: [Lesson]) {
         self.lessons = lessons
@@ -49,7 +52,6 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     func initViews(){
         let createBtn = UIBarButtonItem(title: "NEW", style: .done, target: self, action: #selector(self.addButtonTapped(_:)))
         self.navigationItem.rightBarButtonItem = createBtn
-        
         
         tableView.dataSource = self
         tableView.delegate = self
