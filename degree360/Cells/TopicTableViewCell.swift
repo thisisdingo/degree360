@@ -10,6 +10,9 @@ import UIKit
 
 class TopicTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var topicTitle: UILabel!
+    @IBOutlet weak var myTopicScore: UIProgressView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -26,22 +26,35 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AxV-7G-RzI">
-                        <rect key="frame" x="36" y="66.5" width="248" height="2"/>
+                        <rect key="frame" x="20" y="66.5" width="280" height="2"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="2" id="7Dc-TY-Hmc"/>
                         </constraints>
                     </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beC-ex-Qgb">
+                        <rect key="frame" x="219" y="76.5" width="81" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.42863503889999999" green="0.42863503889999999" blue="0.42863503889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="AxV-7G-RzI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="1AI-ER-s3Y"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="AxV-7G-RzI" secondAttribute="trailing" constant="20" id="ELX-7T-O1q"/>
+                    <constraint firstAttribute="trailing" secondItem="AxV-7G-RzI" secondAttribute="trailing" constant="20" id="D9R-bc-TuG"/>
+                    <constraint firstItem="beC-ex-Qgb" firstAttribute="top" secondItem="AxV-7G-RzI" secondAttribute="bottom" constant="8" id="Ht4-RR-Rjt"/>
                     <constraint firstItem="H2h-Ei-Ngl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="acd-zQ-cIr"/>
                     <constraint firstItem="H2h-Ei-Ngl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="cM2-iV-9gE"/>
+                    <constraint firstItem="AxV-7G-RzI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="jPe-PL-biC"/>
+                    <constraint firstItem="AxV-7G-RzI" firstAttribute="top" secondItem="H2h-Ei-Ngl" secondAttribute="bottom" constant="20" id="kpp-Wo-cP8"/>
                     <constraint firstItem="AxV-7G-RzI" firstAttribute="top" secondItem="H2h-Ei-Ngl" secondAttribute="bottom" constant="20" id="pXL-q0-kIp"/>
+                    <constraint firstAttribute="trailing" secondItem="beC-ex-Qgb" secondAttribute="trailing" constant="20" id="qJi-6i-z9i"/>
                     <constraint firstAttribute="trailing" secondItem="H2h-Ei-Ngl" secondAttribute="trailing" constant="20" id="qqT-1v-SCr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="myTopicScore" destination="AxV-7G-RzI" id="c5E-uf-aDg"/>
+                <outlet property="topicTitle" destination="H2h-Ei-Ngl" id="ljr-cO-hqZ"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="129.24107142857142"/>
         </tableViewCell>
     </objects>
