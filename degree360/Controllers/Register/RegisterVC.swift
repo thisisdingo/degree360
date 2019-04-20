@@ -32,7 +32,7 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
         
         // on click
         // validate
-        self.interactor.register(<#T##name: String##String#>, <#T##photo: UIImage##UIImage#>)
+        //self.interactor.register(<#T##name: String##String#>, <#T##photo: UIImage##UIImage#>)
     }
     
 }
