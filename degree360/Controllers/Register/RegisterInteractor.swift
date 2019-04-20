@@ -22,11 +22,14 @@ class RegisterInteractor : BaseInteractor {
     }
     
     func register(_ name: String, _ photo: UIImage){
+        self.delegate?.startLoading()
         api.createUser(name, { json, err in
             if let err = err {
+                self.delegate?.hideLoading()
                 self.delegate?.showMessage(err)
             }else{
                 if json!.hasError {
+                    self.delegate?.hideLoading()
                     self.delegate?.showMessage(json!.errorMessage)
                 }else{
                     let userId = json!["id"].intValue
@@ -40,11 +43,14 @@ class RegisterInteractor : BaseInteractor {
     private func uploadAvatar(_ image : UIImage){
         api.uploadImage(image, { json, err in
             if let err = err {
+                self.delegate?.hideLoading()
                 self.delegate?.showMessage(err)
             }else{
                 if json!.hasError {
+                    self.delegate?.hideLoading()
                     self.delegate?.showMessage(json!.errorMessage)
                 }else{
+                    self.delegate?.hideLoading()
                     (self.delegate as! RegisterInteractorProtocol).successRegister()
                 }
             }
