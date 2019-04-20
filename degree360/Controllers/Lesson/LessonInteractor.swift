@@ -34,7 +34,7 @@ class LessonInteractor : BaseInteractor {
                 if res!.hasError {
                     self.delegate?.showMessage(res!.errorMessage)
                 }else{
-                    (self.delegate as? LessonInteractorProtocol)?.showLessons(res!.arrayValue.map({ Lesson($0) }))
+                    (self.delegate as? LessonInteractorProtocol)?.showLessons(res!.arrayValue.map({ Lesson($0["lesson"]) }))
                 }
             }
         })
