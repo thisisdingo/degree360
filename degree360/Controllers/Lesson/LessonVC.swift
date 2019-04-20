@@ -44,7 +44,7 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     
     func initViews(){
         
-        let createBtn = UIBarButtonItem(title: "SS", style: .done, target: self, action: #selector(self.addButtonTapped(_:)))
+        let createBtn = UIBarButtonItem(title: "NEW", style: .done, target: self, action: #selector(self.addButtonTapped(_:)))
         self.navigationItem.rightBarButtonItem = createBtn
         
     }
