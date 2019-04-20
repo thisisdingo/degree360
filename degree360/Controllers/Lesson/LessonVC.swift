@@ -10,12 +10,12 @@ import UIKit
 
 class LessonVC : UIViewController, LessonInteractorProtocol {
     
+    func showLessons(_ lessons: [Lesson]) {
+        
+    }
     
     @IBOutlet weak var tableView: UITableView!
     
-    func success() {
-        
-    }
     
     func showMessage(_ message: String) {
         
