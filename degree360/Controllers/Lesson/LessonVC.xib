@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LessonVC" customModule="degree360" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="oth-zz-kVp" id="CsE-Pa-PlG"/>
                 <outlet property="view" destination="sCi-HJ-raO" id="jO5-0H-AcN"/>
             </connections>
         </placeholder>

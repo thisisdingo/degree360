@@ -10,6 +10,8 @@ import UIKit
 
 class LessonVC : UIViewController, LessonInteractorProtocol {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     func showMessage(_ message: String) {
         
     }
@@ -29,7 +31,7 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
         self.interactor = RegisterInteractor(self)
     }
     
-    static func getVC() -> RegisterVC{
-        return RegisterVC.init(nibName: "RegisterVC", bundle: nil)
+    static func getVC() -> LessonVC{
+        return LessonVC.init(nibName: "LessonVC", bundle: nil)
     }
 }
