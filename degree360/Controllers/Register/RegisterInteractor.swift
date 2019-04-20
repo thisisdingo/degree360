@@ -32,7 +32,7 @@ class RegisterInteractor : BaseInteractor {
                     self.delegate?.hideLoading()
                     self.delegate?.showMessage(json!.errorMessage)
                 }else{
-                    let userId = json!["id"].intValue
+                    let userId = json!["id"].stringValue
                     UserController.shared.userId = userId
                     self.uploadAvatar(photo)
                 }
