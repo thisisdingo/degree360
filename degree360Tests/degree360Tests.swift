@@ -7,32 +7,49 @@
 //
 
 import XCTest
-import degree360
+@testable import degree360
 
 class degree360Tests: XCTestCase {
 
+    var createLessonExp : XCTestExpectation!
+    
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        createLessonExp = expectation(description: "createLessonExp")
+
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    
+    
 
     
     func testLessonCreate(){
+        UserController.shared.userId = "1"
+        let interactor = LessonCreateInteractor.init(self)
+        interactor.createLesson("iOS Test", "tesDescr", ["topic1", "topic2", "topic3"])
+        
+        waitForExpectations(timeout: 4, handler: nil)
+    }
+    
+}
+extension degree360Tests : LessonCreateInteractorProtocol {
+    func successCreate(_ lesson: Lesson) {
+        print(lesson)
+        createLessonExp.fulfill()
+    }
+    
+    func showMessage(_ message: String) {
+        print(message)
+    }
+    
+    func startLoading() {
+        
+    }
+    
+    func hideLoading() {
         
     }
     

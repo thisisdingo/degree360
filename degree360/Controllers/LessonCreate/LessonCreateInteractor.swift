@@ -23,12 +23,17 @@ class LessonCreateInteractor: BaseInteractor {
     func createLesson(_ title: String, _ description: String, _ topics: [String]){
         self.delegate?.startLoading()
         api.createLesson(title, description, topics, { res, err in
+            
+            self.delegate?.hideLoading()
+
             if let err = err {
-                self.delegate?.hideLoading()
                 self.delegate?.showMessage(err)
             }else{
-                self.delegate?.hideLoading()
-                (self.delegate as? LessonCreateInteractorProtocol)?.successCreate(Lesson(res!))
+                if res!.hasError {
+                    self.delegate?.showMessage(res!.errorMessage)
+                }else{
+                    (self.delegate as? LessonCreateInteractorProtocol)?.successCreate(Lesson(res!))
+                }
             }
         })
     }

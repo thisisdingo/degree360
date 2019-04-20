@@ -30,10 +30,10 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     }
     
     
-    var interactor : RegisterInteractor!
+    var interactor : LessonInteractor!
     
     override func viewDidLoad() {
-        self.interactor = RegisterInteractor(self as! RegisterInteractorProtocol)
+        self.interactor = LessonInteractor(self)
         
         initViews()
     }
