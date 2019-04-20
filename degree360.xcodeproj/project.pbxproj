@@ -13,6 +13,7 @@
 		65EC7C56226ACFB800D69565 /* degree360.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C54226ACFB800D69565 /* degree360.xcdatamodeld */; };
 		65EC7C58226ACFB900D69565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65EC7C57226ACFB900D69565 /* Assets.xcassets */; };
 		65EC7C5B226ACFB900D69565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65EC7C59226ACFB900D69565 /* LaunchScreen.storyboard */; };
+		65EC7C63226AD48F00D69565 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C62226AD48F00D69565 /* BaseInteractor.swift */; };
 		8799A10C9E860347D1651CC0 /* Pods_degree360.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7984BA49C568AB59F042573 /* Pods_degree360.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		65EC7C57226ACFB900D69565 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65EC7C5A226ACFB900D69565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65EC7C5C226ACFB900D69565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65EC7C62226AD48F00D69565 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		E7984BA49C568AB59F042573 /* Pods_degree360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_degree360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.debug.xcconfig"; path = "Target Support Files/Pods-degree360/Pods-degree360.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +50,6 @@
 				FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */,
 				368A89DE32932A97DE352BC1 /* Pods-degree360.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,6 +74,7 @@
 		65EC7C4C226ACFB800D69565 /* degree360 */ = {
 			isa = PBXGroup;
 			children = (
+				65EC7C64226AD4F600D69565 /* Base */,
 				65EC7C4D226ACFB800D69565 /* AppDelegate.swift */,
 				65EC7C4F226ACFB800D69565 /* ViewController.swift */,
 				65EC7C51226ACFB800D69565 /* Main.storyboard */,
@@ -82,6 +84,14 @@
 				65EC7C54226ACFB800D69565 /* degree360.xcdatamodeld */,
 			);
 			path = degree360;
+			sourceTree = "<group>";
+		};
+		65EC7C64226AD4F600D69565 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				65EC7C62226AD48F00D69565 /* BaseInteractor.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		F790E9930D818B601EF481E0 /* Frameworks */ = {
@@ -215,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65EC7C50226ACFB800D69565 /* ViewController.swift in Sources */,
+				65EC7C63226AD48F00D69565 /* BaseInteractor.swift in Sources */,
 				65EC7C4E226ACFB800D69565 /* AppDelegate.swift in Sources */,
 				65EC7C56226ACFB800D69565 /* degree360.xcdatamodeld in Sources */,
 			);
