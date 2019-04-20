@@ -9,7 +9,7 @@
 import SwiftyJSON
 import UIKit
 
-typealias callback = (_ json : JSON) -> Void
+typealias callback = (_ json : JSON?, _ error : String?) -> Void
 
 class API {
     
@@ -17,9 +17,22 @@ class API {
         return try! JSONSerialization.data(withJSONObject: dic, options: [.sortedKeys])
     }
     
-    func uploadImage(_ image : UIImage){
+    func uploadImage(_ image : UIImage, _ c : @escaping callback){
         
-        let data = ["image" : image.jpegData(compressionQuality: 0.5)]
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {
+            c(nil, "Не удалось сконвертировать изображение в JPG")
+            return
+        }
+        
+        let data = ["image" : imageData.base64EncodedString(),
+                    "uid" : UserController.shared.userId] as [String : Any]
+        
+        
+        
+        
+    }
+    
+    func createUser(_ name : String){
         
         
         
