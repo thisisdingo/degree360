@@ -13,6 +13,11 @@ struct User {
     var id : String
     var name : String
     
+    init() {
+        self.id = ""
+        self.name = ""
+    }
+    
     init(_ json : JSON) {
         self.id = json["id"].stringValue
         self.name = json["name"].stringValue
