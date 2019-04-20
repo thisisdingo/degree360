@@ -10,25 +10,41 @@ import UIKit
 
 class LessonCreateVC : UIViewController, LessonCreateInteractorProtocol {
     
-    @IBOutlet weak var lessonTitle: UITextField!
-    @IBOutlet weak var lessonDescription: UITextField!
-    
-    @IBAction func createBtn(_ sender: UIButton) {
-        interactor.createLesson(lessonTitle.text!, lessonDescription.text!, ["topic1", "topic2", "Topic3"])
+    static func getVC() -> LessonCreateVC{
+        return LessonCreateVC.init(nibName: "LessonCreateVC", bundle: nil)
     }
     
-    func successCreate() {
+    
+    @IBOutlet weak var lessonTitle: UITextField!
+    @IBOutlet weak var lessonDescription: UITextField!
+    @IBOutlet weak var newTopicTextFiedld: UITextField!
+    @IBOutlet weak var tableViewheightContraint: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
+
+    var topics = [String]()
+    var interactor : LessonCreateInteractor!
+    
+    override func viewDidLoad() {
+        self.interactor = LessonCreateInteractor(self)
+        
+        initViews()
+    }
+    
+    
+    func initViews(){
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
     }
     
-    var interactor : LessonCreateInteractor!
     
     func successCreate(_ lesson: Lesson) {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
     func showMessage(_ message: String) {
-        
+        alert(message)
     }
     
     func startLoading() {
@@ -39,19 +55,59 @@ class LessonCreateVC : UIViewController, LessonCreateInteractorProtocol {
         
     }
     
-    override func viewDidLoad() {
-        self.interactor = LessonCreateInteractor(self)
+
+
+    
+    
+    
+    @IBAction func createBtn(_ sender: UIButton) {
+        interactor.createLesson(lessonTitle.text!, lessonDescription.text!, topics)
+    }
+    
+    @IBAction func didCreateTopicBtnTapped(_ sender: Any) {
+        let topicName = newTopicTextFiedld.text!
+        newTopicTextFiedld.text = nil
         
-        initViews()
+        self.topics.append(topicName)
+        self.tableView.reloadData()
+        setTableViewHeight()
     }
     
-    func initViews(){
-        
+    func removeWord(_ index : Int){
+        self.topics.remove(at: index)
+        self.tableView.reloadData()
+        setTableViewHeight()
+    }
+    
+    func setTableViewHeight(){
+        self.tableViewheightContraint.constant = CGFloat(self.topics.count * 44)
+        UIView.animate(withDuration: 0.3, animations: {
+            self.loadViewIfNeeded()
+        })
+    }
+    
+}
+
+extension LessonCreateVC : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.textLabel?.text = topics[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return topics.count
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: { [weak self] _, indexPath in
+            self?.removeWord(indexPath.row)
+        })
+        return [deleteAction]
     }
     
     
-    static func getVC() -> LessonCreateVC{
-        return LessonCreateVC.init(nibName: "LessonCreateVC", bundle: nil)
-    }
+    
     
 }

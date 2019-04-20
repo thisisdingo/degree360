@@ -35,7 +35,7 @@ struct Lesson {
         self.author = User(json["author"])
         self.created = json["created"].stringValue.date
         self.updated = json["updated"].stringValue.date
-        self.topics = json["topics"].arrayValue.map({ return $0.stringValue })
+        self.topics = json["topics"].arrayValue.map({ return $0["title"].stringValue })
     }
     
 }
