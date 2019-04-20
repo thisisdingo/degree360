@@ -47,6 +47,8 @@
 		E1B61896226B0541008B7B63 /* TopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B61894226B0541008B7B63 /* TopicTableViewCell.xib */; };
 		E1B61899226B0552008B7B63 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B61897226B0552008B7B63 /* FriendTableViewCell.swift */; };
 		E1B6189A226B0552008B7B63 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B61898226B0552008B7B63 /* FriendTableViewCell.xib */; };
+		E1B6189D226B3BC1008B7B63 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6189B226B3BC1008B7B63 /* FriendCollectionViewCell.swift */; };
+		E1B6189E226B3BC1008B7B63 /* FriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B6189C226B3BC1008B7B63 /* FriendCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		E1B61894226B0541008B7B63 /* TopicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicTableViewCell.xib; sourceTree = "<group>"; };
 		E1B61897226B0552008B7B63 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		E1B61898226B0552008B7B63 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		E1B6189B226B3BC1008B7B63 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		E1B6189C226B3BC1008B7B63 /* FriendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCollectionViewCell.xib; sourceTree = "<group>"; };
 		E7984BA49C568AB59F042573 /* Pods_degree360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_degree360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.debug.xcconfig"; path = "Target Support Files/Pods-degree360/Pods-degree360.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -289,6 +293,8 @@
 				E1B61894226B0541008B7B63 /* TopicTableViewCell.xib */,
 				E1B61897226B0552008B7B63 /* FriendTableViewCell.swift */,
 				E1B61898226B0552008B7B63 /* FriendTableViewCell.xib */,
+				E1B6189B226B3BC1008B7B63 /* FriendCollectionViewCell.swift */,
+				E1B6189C226B3BC1008B7B63 /* FriendCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 				E1B61878226AEBE9008B7B63 /* LessonVC.xib in Resources */,
 				E1B6187F226AF3F5008B7B63 /* TopicVC.xib in Resources */,
 				65EC7C53226ACFB800D69565 /* Main.storyboard in Resources */,
+				E1B6189E226B3BC1008B7B63 /* FriendCollectionViewCell.xib in Resources */,
 				E1B6188B226AF805008B7B63 /* LessonTableViewCell.xib in Resources */,
 				E1B61896226B0541008B7B63 /* TopicTableViewCell.xib in Resources */,
 				E1B6189A226B0552008B7B63 /* FriendTableViewCell.xib in Resources */,
@@ -503,6 +510,7 @@
 				E1B61899226B0552008B7B63 /* FriendTableViewCell.swift in Sources */,
 				E1B61890226AFE33008B7B63 /* LessonCreateInteractor.swift in Sources */,
 				E1B61874226AEBCC008B7B63 /* LessonVC.swift in Sources */,
+				E1B6189D226B3BC1008B7B63 /* FriendCollectionViewCell.swift in Sources */,
 				E1B61884226AF6E1008B7B63 /* FriendInteractor.swift in Sources */,
 				65EC7C69226ADAD700D69565 /* Constants.swift in Sources */,
 				652A8F4B226B01A800D5CC24 /* User.swift in Sources */,
