@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="139" height="172"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GJa-WY-fSP">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="male" translatesAutoresizingMaskIntoConstraints="NO" id="GJa-WY-fSP">
                         <rect key="frame" x="0.0" y="0.0" width="139" height="130"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="GJa-WY-fSP" secondAttribute="height" multiplier="139:131" constant="1" id="QaM-wE-rZ9"/>
@@ -54,4 +54,7 @@
             <point key="canvasLocation" x="202.17391304347828" y="170.75892857142856"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="male" width="122" height="128"/>
+    </resources>
 </document>
