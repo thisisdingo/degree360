@@ -18,13 +18,13 @@ class UserController {
         return defaults.string(forKey: "userId") != nil
     }
     
-    var userId : Int {
+    var userId : String {
         set (value) {
             defaults.set(value, forKey: "userId")
             defaults.synchronize()
         }
         get {
-            return Int(defaults.string(forKey: "userId") ?? "") ?? 0
+            return defaults.string(forKey: "userId") ?? ""
         }
     }
     
