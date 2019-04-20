@@ -15,6 +15,8 @@
 		65EC7C5B226ACFB900D69565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65EC7C59226ACFB900D69565 /* LaunchScreen.storyboard */; };
 		65EC7C63226AD48F00D69565 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C62226AD48F00D69565 /* BaseInteractor.swift */; };
 		8799A10C9E860347D1651CC0 /* Pods_degree360.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7984BA49C568AB59F042573 /* Pods_degree360.framework */; };
+		E18C079A226AD5FE00399075 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0799226AD5FE00399075 /* RegisterVC.swift */; };
+		E18C079C226AD62400399075 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C079B226AD62400399075 /* RegisterInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		65EC7C5A226ACFB900D69565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65EC7C5C226ACFB900D69565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65EC7C62226AD48F00D69565 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		97CFD8F344D294271CE59BC2 /* Pods-degree360.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.release.xcconfig"; path = "Pods/Target Support Files/Pods-degree360/Pods-degree360.release.xcconfig"; sourceTree = "<group>"; };
+		B3D1AFF69096D691CFE97008 /* Pods-degree360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.debug.xcconfig"; path = "Pods/Target Support Files/Pods-degree360/Pods-degree360.debug.xcconfig"; sourceTree = "<group>"; };
+		E18C0799226AD5FE00399075 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		E18C079B226AD62400399075 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 		E7984BA49C568AB59F042573 /* Pods_degree360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_degree360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.debug.xcconfig"; path = "Target Support Files/Pods-degree360/Pods-degree360.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +55,8 @@
 			children = (
 				FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */,
 				368A89DE32932A97DE352BC1 /* Pods-degree360.release.xcconfig */,
+				B3D1AFF69096D691CFE97008 /* Pods-degree360.debug.xcconfig */,
+				97CFD8F344D294271CE59BC2 /* Pods-degree360.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -74,6 +82,7 @@
 		65EC7C4C226ACFB800D69565 /* degree360 */ = {
 			isa = PBXGroup;
 			children = (
+				E18C0796226AD5CD00399075 /* Controllers */,
 				65EC7C64226AD4F600D69565 /* Base */,
 				65EC7C4D226ACFB800D69565 /* AppDelegate.swift */,
 				65EC7C4F226ACFB800D69565 /* ViewController.swift */,
@@ -92,6 +101,23 @@
 				65EC7C62226AD48F00D69565 /* BaseInteractor.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		E18C0796226AD5CD00399075 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E18C0797226AD5DD00399075 /* Register */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E18C0797226AD5DD00399075 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				E18C0799226AD5FE00399075 /* RegisterVC.swift */,
+				E18C079B226AD62400399075 /* RegisterInteractor.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		F790E9930D818B601EF481E0 /* Frameworks */ = {
@@ -201,7 +227,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-degree360/Pods-degree360-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-degree360/Pods-degree360-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Indigear/Indigear.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -214,7 +240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-degree360/Pods-degree360-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-degree360/Pods-degree360-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -227,7 +253,9 @@
 				65EC7C50226ACFB800D69565 /* ViewController.swift in Sources */,
 				65EC7C63226AD48F00D69565 /* BaseInteractor.swift in Sources */,
 				65EC7C4E226ACFB800D69565 /* AppDelegate.swift in Sources */,
+				E18C079C226AD62400399075 /* RegisterInteractor.swift in Sources */,
 				65EC7C56226ACFB800D69565 /* degree360.xcdatamodeld in Sources */,
+				E18C079A226AD5FE00399075 /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +399,7 @@
 		};
 		65EC7C60226ACFB900D69565 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */;
+			baseConfigurationReference = B3D1AFF69096D691CFE97008 /* Pods-degree360.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -390,7 +418,7 @@
 		};
 		65EC7C61226ACFB900D69565 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 368A89DE32932A97DE352BC1 /* Pods-degree360.release.xcconfig */;
+			baseConfigurationReference = 97CFD8F344D294271CE59BC2 /* Pods-degree360.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
