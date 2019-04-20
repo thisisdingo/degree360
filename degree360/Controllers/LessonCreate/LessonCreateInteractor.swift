@@ -14,7 +14,7 @@ protocol LessonCreateInteractorProtocol : BaseInteractorProtocol {
 
 class LessonCreateInteractor: BaseInteractor {
     
-    init(_ delegate : BaseInteractorProtocol){
+    init(_ delegate : LessonCreateInteractorProtocol){
         super.init()
         
         self.delegate = delegate

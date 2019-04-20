@@ -14,7 +14,7 @@ protocol TopicInteractorProtocol : BaseInteractorProtocol {
 
 class TopicInteractor : BaseInteractor{
     
-    init(_ delegate : BaseInteractorProtocol){
+    init(_ delegate : TopicInteractorProtocol){
         super.init()
         
         self.delegate = delegate

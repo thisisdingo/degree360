@@ -14,7 +14,7 @@ protocol FriendInteractorProtocol : BaseInteractorProtocol{
 
 class FriendInteractor : BaseInteractor{
     
-    init(_ delegate : BaseInteractorProtocol){
+    init(_ delegate : FriendInteractorProtocol){
         super.init()
         
         self.delegate = delegate
