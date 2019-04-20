@@ -26,4 +26,11 @@ class API {
         
     }
     
+    func createUser(_ name : String){
+        
+        
+        
+        
+    }
+    
 }
