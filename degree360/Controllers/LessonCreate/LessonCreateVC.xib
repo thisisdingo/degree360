@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LessonCreateVC" customModule="degree360" customModuleProvider="target">
             <connections>
+                <outlet property="lessonDescription" destination="8zc-LH-00E" id="9pr-R4-GKU"/>
+                <outlet property="lessonTitle" destination="vfD-w8-8AG" id="CMh-Sq-T3K"/>
                 <outlet property="view" destination="iN0-l3-epB" id="0iB-A2-zWn"/>
             </connections>
         </placeholder>
@@ -36,6 +38,9 @@
                     <rect key="frame" x="20" y="511" width="46" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Create"/>
+                    <connections>
+                        <action selector="createBtn:" destination="-1" eventType="touchUpInside" id="GeH-uy-1ma"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zc-LH-00E">
                     <rect key="frame" x="20" y="154" width="374" height="30"/>
