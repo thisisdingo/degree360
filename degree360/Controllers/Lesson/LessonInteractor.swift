@@ -10,6 +10,7 @@ import Foundation
 
 protocol LessonInteractorProtocol : BaseInteractorProtocol{
     func showLessons( _ lessons : [Lesson])
+    func showNoLessons()
 }
 
 class LessonInteractor : BaseInteractor {
