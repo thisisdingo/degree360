@@ -22,6 +22,9 @@
 		E18C079A226AD5FE00399075 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C0799226AD5FE00399075 /* RegisterVC.swift */; };
 		E18C079C226AD62400399075 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C079B226AD62400399075 /* RegisterInteractor.swift */; };
 		E1B61871226ADF1F008B7B63 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B61870226ADF1F008B7B63 /* RegisterVC.xib */; };
+		E1B61874226AEBCC008B7B63 /* LessonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B61873226AEBCC008B7B63 /* LessonVC.swift */; };
+		E1B61876226AEBDA008B7B63 /* LessonInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B61875226AEBDA008B7B63 /* LessonInteractor.swift */; };
+		E1B61878226AEBE9008B7B63 /* LessonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B61877226AEBE9008B7B63 /* LessonVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		E18C0799226AD5FE00399075 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		E18C079B226AD62400399075 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 		E1B61870226ADF1F008B7B63 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
+		E1B61873226AEBCC008B7B63 /* LessonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonVC.swift; sourceTree = "<group>"; };
+		E1B61875226AEBDA008B7B63 /* LessonInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonInteractor.swift; sourceTree = "<group>"; };
+		E1B61877226AEBE9008B7B63 /* LessonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonVC.xib; sourceTree = "<group>"; };
 		E7984BA49C568AB59F042573 /* Pods_degree360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_degree360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.debug.xcconfig"; path = "Target Support Files/Pods-degree360/Pods-degree360.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +142,7 @@
 		E18C0796226AD5CD00399075 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E1B61872226AEBA6008B7B63 /* Lesson */,
 				E18C0797226AD5DD00399075 /* Register */,
 			);
 			path = Controllers;
@@ -149,6 +156,16 @@
 				E1B61870226ADF1F008B7B63 /* RegisterVC.xib */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		E1B61872226AEBA6008B7B63 /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				E1B61873226AEBCC008B7B63 /* LessonVC.swift */,
+				E1B61875226AEBDA008B7B63 /* LessonInteractor.swift */,
+				E1B61877226AEBE9008B7B63 /* LessonVC.xib */,
+			);
+			path = Lesson;
 			sourceTree = "<group>";
 		};
 		F790E9930D818B601EF481E0 /* Frameworks */ = {
@@ -222,6 +239,7 @@
 				65EC7C5B226ACFB900D69565 /* LaunchScreen.storyboard in Resources */,
 				E1B61871226ADF1F008B7B63 /* RegisterVC.xib in Resources */,
 				65EC7C58226ACFB900D69565 /* Assets.xcassets in Resources */,
+				E1B61878226AEBE9008B7B63 /* LessonVC.xib in Resources */,
 				65EC7C53226ACFB800D69565 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B61876226AEBDA008B7B63 /* LessonInteractor.swift in Sources */,
 				65EC7C6B226ADF7700D69565 /* UserController.swift in Sources */,
 				65EC7C50226ACFB800D69565 /* ViewController.swift in Sources */,
 				65EC7C63226AD48F00D69565 /* BaseInteractor.swift in Sources */,
@@ -291,6 +310,7 @@
 				65EC7C56226ACFB800D69565 /* degree360.xcdatamodeld in Sources */,
 				E18C079A226AD5FE00399075 /* RegisterVC.swift in Sources */,
 				65EC7C67226AD80000D69565 /* API.swift in Sources */,
+				E1B61874226AEBCC008B7B63 /* LessonVC.swift in Sources */,
 				65EC7C69226ADAD700D69565 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

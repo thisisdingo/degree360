@@ -23,21 +23,21 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     
     @IBAction func clickRegister(_ sender: Any) {
         
-        guard let userName = name.text else {
+        guard !name.text!.isEmpty else {
             alert("Please type your name");
             return
         }
         
         guard let image = photo.image else {
-            alert("Please type your name");
+            alert("Please check your sex");
             return
         }
         
-        self.interactor.register(userName, image)
+        self.interactor.register(name.text!, image)
     }
     
     func showMessage(_ message: String) {
-        
+        alert(message);
     }
     
     func startLoading() {
@@ -49,7 +49,8 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     }
     
     func successRegister() {
-        
+        let vc = LessonVC.getVC()
+        present(vc, animated: true, completion: nil)
     }
     
     var interactor : RegisterInteractor!
