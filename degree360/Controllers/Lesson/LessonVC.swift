@@ -10,8 +10,10 @@ import UIKit
 
 class LessonVC : UIViewController, LessonInteractorProtocol {
 
-    var interactor : LessonInteractor!
     @IBOutlet weak var tableView: UITableView!
+
+    
+    var interactor : LessonInteractor!
     var lessons = [Lesson]()
     
     func showNoLessons() {
@@ -24,7 +26,7 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     }
     
     func showMessage(_ message: String) {
-        
+        alert(message)
     }
     
     func startLoading() {
@@ -33,6 +35,10 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     
     func hideLoading() {
         
+    }
+    
+    func didJoinRoom() {
+        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -52,6 +58,8 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     func initViews(){
         let createBtn = UIBarButtonItem(title: "NEW", style: .done, target: self, action: #selector(self.addButtonTapped(_:)))
         self.navigationItem.rightBarButtonItem = createBtn
+        let joinBtn = UIBarButtonItem(title: "JOIN", style: .done, target: self, action: #selector(self.joinButtonTapped(_:)))
+        self.navigationItem.leftBarButtonItem = joinBtn
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -61,6 +69,23 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     
     @objc func addButtonTapped(_ sender : UIBarButtonItem){
         self.navigationController?.pushViewController(LessonCreateVC.getVC(), animated: true)
+    }
+    
+    @objc func joinButtonTapped(_ sender : UIBarButtonItem){
+        let alert = UIAlertController(title: "Join lesson", message: "Please, enter your lesson ID", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Room id"
+            textField.keyboardType = .decimalPad
+        })
+        alert.addAction(UIAlertAction(title: "Join", style: .default, handler: { [weak self] _ in
+            guard let roomID = alert.textFields!.first?.text else {
+                return
+            }
+            
+            self?.interactor.joinRoom(roomID)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
 }

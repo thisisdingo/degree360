@@ -87,4 +87,16 @@ class API {
         
     }
     
+    func joinRoom(_ roomId : String, _ c : @escaping callback){
+        let dic : [String : Any] = ["uid" : UserController.shared.userId ]
+        
+        Indigear.run(Constants.serverAddress + "api/lesson/join/\(roomId)", method: .post, headers: headers, body: toJSON(dic), { res in
+            if let err = res.error {
+                c(nil, err.localizedDescription)
+            }else{
+                c(JSON(res.result!), nil)
+            }
+        })
+    }
+    
 }

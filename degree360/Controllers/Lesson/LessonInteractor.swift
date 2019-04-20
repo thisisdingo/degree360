@@ -11,6 +11,7 @@ import Foundation
 protocol LessonInteractorProtocol : BaseInteractorProtocol{
     func showLessons( _ lessons : [Lesson])
     func showNoLessons()
+    func didJoinRoom()
 }
 
 class LessonInteractor : BaseInteractor {
@@ -50,5 +51,25 @@ class LessonInteractor : BaseInteractor {
         
     }
     
+    
+    func joinRoom(_ roomID : String){
+        self.delegate?.startLoading()
+        
+        
+        api.joinRoom(roomID, { res, err in
+            self.delegate?.hideLoading()
+            
+            if let err = err {
+                self.delegate?.showMessage(err)
+            }else{
+                if res!.hasError {
+                    self.delegate?.showMessage(res!.errorMessage)
+                }else{
+                    (self.delegate as? LessonInteractorProtocol)?.didJoinRoom()
+                }
+            }
+        })
+        
+    }
     
 }
