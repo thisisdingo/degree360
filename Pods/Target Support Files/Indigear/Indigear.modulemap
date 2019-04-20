@@ -1,0 +1,6 @@
+framework module Indigear {
+  umbrella header "Indigear-umbrella.h"
+
+  export *
+  module * { export * }
+}
