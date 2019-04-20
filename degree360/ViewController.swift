@@ -21,6 +21,9 @@ class ViewController: UIViewController {
         if(!isAuth){
             let vc = RegisterVC.getVC()
             present(vc, animated: true, completion: nil)
+        }else{
+            let vc = LessonVC.getVC()
+            present(vc, animated: true, completion: nil)
         }
         
     }

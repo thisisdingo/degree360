@@ -49,8 +49,7 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     }
     
     func successRegister() {
-        let vc = LessonVC.getVC()
-        present(vc, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     var interactor : RegisterInteractor!
