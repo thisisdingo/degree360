@@ -13,6 +13,7 @@
 		652A8F4B226B01A800D5CC24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F4A226B01A800D5CC24 /* User.swift */; };
 		652A8F4D226B01FD00D5CC24 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F4C226B01FD00D5CC24 /* Extenstions.swift */; };
 		652A8F55226B08C900D5CC24 /* degree360Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F54226B08C900D5CC24 /* degree360Tests.swift */; };
+		652A8F5D226B34F500D5CC24 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F5C226B34F500D5CC24 /* Topic.swift */; };
 		65EC7C4E226ACFB800D69565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C4D226ACFB800D69565 /* AppDelegate.swift */; };
 		65EC7C50226ACFB800D69565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C4F226ACFB800D69565 /* ViewController.swift */; };
 		65EC7C53226ACFB800D69565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65EC7C51226ACFB800D69565 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 		652A8F52226B08C800D5CC24 /* degree360Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = degree360Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		652A8F54226B08C900D5CC24 /* degree360Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = degree360Tests.swift; sourceTree = "<group>"; };
 		652A8F56226B08C900D5CC24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		652A8F5C226B34F500D5CC24 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		65EC7C4A226ACFB800D69565 /* degree360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = degree360.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EC7C4D226ACFB800D69565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65EC7C4F226ACFB800D69565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				652A8F47226B00C800D5CC24 /* Lesson.swift */,
 				652A8F4A226B01A800D5CC24 /* User.swift */,
+				652A8F5C226B34F500D5CC24 /* Topic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				65EC7C56226ACFB800D69565 /* degree360.xcdatamodeld in Sources */,
 				E1B61882226AF6BD008B7B63 /* FriendVC.swift in Sources */,
 				E18C079A226AD5FE00399075 /* RegisterVC.swift in Sources */,
+				652A8F5D226B34F500D5CC24 /* Topic.swift in Sources */,
 				E1B6187B226AF35B008B7B63 /* TopicVC.swift in Sources */,
 				652A8F48226B00C800D5CC24 /* Lesson.swift in Sources */,
 				65EC7C67226AD80000D69565 /* API.swift in Sources */,
