@@ -29,6 +29,11 @@
 		E1B6187B226AF35B008B7B63 /* TopicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6187A226AF35B008B7B63 /* TopicVC.swift */; };
 		E1B6187D226AF396008B7B63 /* TopicInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6187C226AF396008B7B63 /* TopicInteractor.swift */; };
 		E1B6187F226AF3F5008B7B63 /* TopicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B6187E226AF3F5008B7B63 /* TopicVC.xib */; };
+		E1B61882226AF6BD008B7B63 /* FriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B61881226AF6BD008B7B63 /* FriendVC.swift */; };
+		E1B61884226AF6E1008B7B63 /* FriendInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B61883226AF6E1008B7B63 /* FriendInteractor.swift */; };
+		E1B61886226AF758008B7B63 /* FriendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B61885226AF758008B7B63 /* FriendVC.xib */; };
+		E1B6188A226AF805008B7B63 /* LessonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B61888226AF805008B7B63 /* LessonTableViewCell.swift */; };
+		E1B6188B226AF805008B7B63 /* LessonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B61889226AF805008B7B63 /* LessonTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,11 @@
 		E1B6187A226AF35B008B7B63 /* TopicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicVC.swift; sourceTree = "<group>"; };
 		E1B6187C226AF396008B7B63 /* TopicInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicInteractor.swift; sourceTree = "<group>"; };
 		E1B6187E226AF3F5008B7B63 /* TopicVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicVC.xib; sourceTree = "<group>"; };
+		E1B61881226AF6BD008B7B63 /* FriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendVC.swift; sourceTree = "<group>"; };
+		E1B61883226AF6E1008B7B63 /* FriendInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInteractor.swift; sourceTree = "<group>"; };
+		E1B61885226AF758008B7B63 /* FriendVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendVC.xib; sourceTree = "<group>"; };
+		E1B61888226AF805008B7B63 /* LessonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTableViewCell.swift; sourceTree = "<group>"; };
+		E1B61889226AF805008B7B63 /* LessonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonTableViewCell.xib; sourceTree = "<group>"; };
 		E7984BA49C568AB59F042573 /* Pods_degree360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_degree360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.debug.xcconfig"; path = "Target Support Files/Pods-degree360/Pods-degree360.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +116,7 @@
 		65EC7C4C226ACFB800D69565 /* degree360 */ = {
 			isa = PBXGroup;
 			children = (
+				E1B61887226AF7A0008B7B63 /* Cells */,
 				65EC7C6C226AE4C400D69565 /* Extenstions */,
 				65EC7C65226AD7F100D69565 /* Services */,
 				E18C0796226AD5CD00399075 /* Controllers */,
@@ -151,6 +162,7 @@
 		E18C0796226AD5CD00399075 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E1B61880226AF690008B7B63 /* Friend */,
 				E1B61879226AF33D008B7B63 /* Topic */,
 				E1B61872226AEBA6008B7B63 /* Lesson */,
 				E18C0797226AD5DD00399075 /* Register */,
@@ -186,6 +198,25 @@
 				E1B6187E226AF3F5008B7B63 /* TopicVC.xib */,
 			);
 			path = Topic;
+			sourceTree = "<group>";
+		};
+		E1B61880226AF690008B7B63 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				E1B61881226AF6BD008B7B63 /* FriendVC.swift */,
+				E1B61883226AF6E1008B7B63 /* FriendInteractor.swift */,
+				E1B61885226AF758008B7B63 /* FriendVC.xib */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		E1B61887226AF7A0008B7B63 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E1B61888226AF805008B7B63 /* LessonTableViewCell.swift */,
+				E1B61889226AF805008B7B63 /* LessonTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F790E9930D818B601EF481E0 /* Frameworks */ = {
@@ -259,9 +290,11 @@
 				65EC7C5B226ACFB900D69565 /* LaunchScreen.storyboard in Resources */,
 				E1B61871226ADF1F008B7B63 /* RegisterVC.xib in Resources */,
 				65EC7C58226ACFB900D69565 /* Assets.xcassets in Resources */,
+				E1B61886226AF758008B7B63 /* FriendVC.xib in Resources */,
 				E1B61878226AEBE9008B7B63 /* LessonVC.xib in Resources */,
 				E1B6187F226AF3F5008B7B63 /* TopicVC.xib in Resources */,
 				65EC7C53226ACFB800D69565 /* Main.storyboard in Resources */,
+				E1B6188B226AF805008B7B63 /* LessonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,15 +359,18 @@
 				E1B6187D226AF396008B7B63 /* TopicInteractor.swift in Sources */,
 				65EC7C50226ACFB800D69565 /* ViewController.swift in Sources */,
 				65EC7C63226AD48F00D69565 /* BaseInteractor.swift in Sources */,
+				E1B6188A226AF805008B7B63 /* LessonTableViewCell.swift in Sources */,
 				65EC7C4E226ACFB800D69565 /* AppDelegate.swift in Sources */,
 				652A8F44226AECAB00D5CC24 /* Extenstion+SwiftyJSON.swift in Sources */,
 				E18C079C226AD62400399075 /* RegisterInteractor.swift in Sources */,
 				65EC7C6E226AE4DF00D69565 /* Extenstion+UIViewController.swift in Sources */,
 				65EC7C56226ACFB800D69565 /* degree360.xcdatamodeld in Sources */,
+				E1B61882226AF6BD008B7B63 /* FriendVC.swift in Sources */,
 				E18C079A226AD5FE00399075 /* RegisterVC.swift in Sources */,
 				E1B6187B226AF35B008B7B63 /* TopicVC.swift in Sources */,
 				65EC7C67226AD80000D69565 /* API.swift in Sources */,
 				E1B61874226AEBCC008B7B63 /* LessonVC.swift in Sources */,
+				E1B61884226AF6E1008B7B63 /* FriendInteractor.swift in Sources */,
 				65EC7C69226ADAD700D69565 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
