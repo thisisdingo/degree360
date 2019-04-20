@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LessonCreateInteractorProtocol : BaseInteractorProtocol {
-    
+    func successCreate()
 }
 
 class LessonCreateInteractor: BaseInteractor {
@@ -18,6 +18,10 @@ class LessonCreateInteractor: BaseInteractor {
         super.init()
         
         self.delegate = delegate
+    }
+    
+    func createLesson(_ title: String, _ description: String, _ topics: [String]){
+        
     }
     
 }

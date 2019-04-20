@@ -10,7 +10,12 @@ import UIKit
 
 class LessonVC : UIViewController, LessonInteractorProtocol {
     
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    func success() {
+        
+    }
     
     func showMessage(_ message: String) {
         
@@ -28,7 +33,7 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     var interactor : RegisterInteractor!
     
     override func viewDidLoad() {
-        self.interactor = RegisterInteractor(self)
+        self.interactor = RegisterInteractor(self as! RegisterInteractorProtocol)
         
         initViews()
     }

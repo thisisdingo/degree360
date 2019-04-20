@@ -9,6 +9,11 @@
 import UIKit
 
 class LessonCreateVC : UIViewController, LessonCreateInteractorProtocol {
+    
+    func successCreate() {
+        
+    }
+    
     func showMessage(_ message: String) {
         
     }

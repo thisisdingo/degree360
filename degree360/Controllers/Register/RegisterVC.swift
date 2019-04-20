@@ -56,10 +56,6 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     
     override func viewDidLoad() {
         self.interactor = RegisterInteractor(self)
-        
-        // on click
-        // validate
-        //self.interactor.register(<#T##name: String##String#>, <#T##photo: UIImage##UIImage#>)
     }
     
     static func getVC() -> RegisterVC{
