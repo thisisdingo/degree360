@@ -9,5 +9,5 @@ target 'degree360' do
   pod 'Indigear'
   pod 'SwiftyJSON'
   pod 'JJHUD'
-  
+  pod 'Hero'  
 end
