@@ -19,11 +19,12 @@ class ViewController: UIViewController {
         let isAuth = UserController.shared.isAuth
         
         if(isAuth){
-            let vc = RegisterVC.getVC()
-            present(vc, animated: true, completion: nil)
-        }else{
             let vc = Helpers.getNavController(LessonVC.getVC())
             present(vc, animated: true, completion: nil)
+        }else{
+            let vc = RegisterVC.getVC()
+            present(vc, animated: true, completion: nil)
+            
         }
         
     }
