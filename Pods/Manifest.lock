@@ -1,20 +1,24 @@
 PODS:
   - Indigear (0.0.1)
+  - JJHUD (2.6)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Indigear
+  - JJHUD
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Indigear
+    - JJHUD
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Indigear: 2846ec74d50ca8b70e7403798f1bd39cbac6bafc
+  JJHUD: 1e3b7051a2d62d69d7d0330ab9562e8a6cd757f8
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 3c905ecf810ed95fcdb59dd38b98d346575fee16
+PODFILE CHECKSUM: 971f45cdfb320635e3eaff1ee0c076b373f806ec
 
 COCOAPODS: 1.6.1
