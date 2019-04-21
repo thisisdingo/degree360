@@ -39,6 +39,7 @@ class LessonSignleVCInteractor : BaseInteractor {
                 if res!.hasError {
                     self.delegate?.showMessage(res!.errorMessage)
                 }else{
+                    print(res!)
                     (self.delegate as? LessonSignleVCInteractorProtocol)?.successRatingSet()
                 }
             }

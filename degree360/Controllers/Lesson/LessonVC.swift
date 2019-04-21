@@ -47,6 +47,8 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
         self.hero.isEnabled = true
         initViews()
         self.hero.modalAnimationType = .selectBy(presenting:.zoom, dismissing:.zoomOut)
+        
+        title = "My progress"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -120,10 +122,8 @@ extension LessonVC : UITableViewDelegate, UITableViewDataSource {
         
         cell.lessonName.text = lesson.title
         cell.topicsCount.text = "There are \(lesson.topics.count) topics"
-        let progress = Progress(totalUnitCount: 100)
-        progress.completedUnitCount = Int64(Int.random(in: 0..<100))
-        progress.completedUnitCount += 1
-        cell.myLessonScore.setProgress(Float(progress.fractionCompleted), animated: true)
+        cell.myLessonScore.progress = lesson.percent / 100
+        print(lesson.percent / 100)
         
         return cell
     }

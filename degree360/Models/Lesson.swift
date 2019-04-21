@@ -20,7 +20,8 @@ struct Lesson {
     var updated : Date
     var topics : [Topic]
     var friends : [User]
-    
+    var percent : Float
+
     init() {
         self.id = ""
         self.title = ""
@@ -30,6 +31,7 @@ struct Lesson {
         self.updated = Date()
         self.topics = [Topic]()
         self.friends = [User]()
+        self.percent = 0
     }
     
     init(_ json : JSON) {
@@ -41,6 +43,7 @@ struct Lesson {
         self.updated = json["updated"].stringValue.date
         self.topics = json["topics"].arrayValue.map({ return Topic($0) })
         self.friends = json["friends"].arrayValue.map({ return User($0["user"]) })
+        self.percent = json["percent"].floatValue
     }
     
 }
