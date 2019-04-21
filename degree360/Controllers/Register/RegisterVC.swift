@@ -15,15 +15,6 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     var imagePicker: UIImagePickerController!
     @IBOutlet weak var startBtn: UIButton!
     
-    
-    @IBAction func checkMale(_ sender: UIButton) {
-        photo.image = #imageLiteral(resourceName: "male")
-    }
-    
-    @IBAction func checkFemale(_ sender: Any) {
-        photo.image = #imageLiteral(resourceName: "female")
-    }
-    
     @IBAction func clickRegister(_ sender: Any) {
         
         guard !name.text!.isEmpty else {
