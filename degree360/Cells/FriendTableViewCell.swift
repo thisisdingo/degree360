@@ -13,7 +13,9 @@ protocol FriendTableViewCellProtocol : class {
 }
 
 class FriendTableViewCell: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var bgView : UIView!
     @IBOutlet weak var answerLabel: UILabel!
     var index : Int = 0
     
@@ -27,6 +29,15 @@ class FriendTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        bgView.layer.cornerRadius = 10
+        
+        // shadow
+        bgView.layer.shadowColor = UIColor.black.cgColor
+        bgView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        bgView.layer.shadowOpacity = 0.7
+        bgView.layer.shadowRadius = 4.0
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

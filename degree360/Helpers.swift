@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Hero
 
 class Helpers {
     
     static func getNavController(_ rootVC : UIViewController) -> UIViewController {
-        return UINavigationController(rootViewController: rootVC)
+        let navController = UINavigationController(rootViewController: rootVC)        
+        navController.hero.isEnabled = true
+        navController.navigationBar.prefersLargeTitles = true
+        return navController
     }
     
 }

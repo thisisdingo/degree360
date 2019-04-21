@@ -32,6 +32,7 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
     @IBOutlet weak var lessonId : UILabel!
     @IBOutlet weak var lessonTitle : UILabel!
     @IBOutlet weak var currentUser : UILabel!
+    @IBOutlet weak var closeBtn : UIButton!
 
     
     var lesson : Lesson!
@@ -75,11 +76,18 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hero.modalAnimationType = .selectBy(presenting:.zoom, dismissing:.zoomOut)
+
         self.hero.isEnabled = true
         
         usersCollectionView.register(UINib.init(nibName: "FriendCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FriendCollectionViewCell")
         usersCollectionView.dataSource = self
         usersCollectionView.delegate = self
+        
+        usersCollectionView.hero.modifiers = [.cascade]
+        for cell in usersCollectionView.visibleCells {
+            cell.hero.modifiers = [.fade, .scale(0.5)]
+        }
         
         topicsTableView.register(UINib.init(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendTableViewCell")
         topicsTableView.dataSource = self
@@ -90,6 +98,14 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
         currentUser.font = UIFont.boldSystemFont(ofSize: 16.0)
         interactor = LessonSignleVCInteractor(self)
         setContent()
+        
+        closeBtn.layer.cornerRadius = 20
+        
+        // shadow
+        closeBtn.layer.shadowColor = UIColor.black.cgColor
+        closeBtn.layer.shadowOffset = CGSize(width: 3, height: 3)
+        closeBtn.layer.shadowOpacity = 0.7
+        closeBtn.layer.shadowRadius = 10
         
     }
     
@@ -127,6 +143,10 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
     }
     
     
+    @objc func closeBtn(_ sender : UIButton){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     static func getVC() -> LessonSignleVC{
         return LessonSignleVC.init(nibName: "LessonSignleVC", bundle: nil)
     }
@@ -142,6 +162,8 @@ extension LessonSignleVC : UICollectionViewDataSource, UICollectionViewDelegate,
         cell.friendName.text = friend.name
         if(selectedUserIndex == indexPath.row){
             cell.friendName.font = UIFont.boldSystemFont(ofSize: 16.0)
+        }else{
+            cell.friendName.font = UIFont.systemFont(ofSize: 16.0)
         }
         if(friend.avatar != ""){
             cell.friendPhoto.setImage(Constants.serverAddress + friend.avatar )
@@ -164,6 +186,8 @@ extension LessonSignleVC : UICollectionViewDataSource, UICollectionViewDelegate,
         selectedUserIndex = indexPath.row
         self.currentUser.text = lesson.friends[selectedUserIndex].name
         self.topicsTableView.reloadData()
+        
+        self.usersCollectionView.reloadItems(at: [indexPath])
     }
 }
 
@@ -198,5 +222,7 @@ extension LessonSignleVC : UITableViewDelegate, UITableViewDataSource, FriendTab
     }
     
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
