@@ -83,7 +83,7 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
         
         // init answers
         
-        
+        currentUser.font = UIFont.boldSystemFont(ofSize: 16.0)
         interactor = LessonSignleVCInteractor(self)
         setContent()
         
@@ -103,6 +103,7 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
             })
         })
         
+        self.currentUser.text = lesson.friends[selectedUserIndex].name
         lessonId.text = lesson.title + " / " + lesson.id //"Your lesson id: " + lesson.id
         lessonTitle.text = "There are " + String(lesson.friends.count) + " persons"
         
@@ -135,6 +136,9 @@ extension LessonSignleVC : UICollectionViewDataSource, UICollectionViewDelegate,
         let friend = lesson.friends[indexPath.row]
         
         cell.friendName.text = friend.name
+        if(selectedUserIndex == indexPath.row){
+            cell.friendName.font = UIFont.boldSystemFont(ofSize: 16.0)
+        }
         if(friend.avatar != ""){
             cell.friendPhoto.setImage(Constants.serverAddress + friend.avatar )
         }else{
