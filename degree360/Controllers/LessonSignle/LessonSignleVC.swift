@@ -103,8 +103,8 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
             })
         })
         
-        lessonId.text = "Your lesson id: " + lesson.id
-        lessonTitle.text = "Lesson name: " + lesson.title
+        lessonId.text = lesson.title + " / " + lesson.id //"Your lesson id: " + lesson.id
+        lessonTitle.text = "There are " + String(lesson.friends.count) + " persons"
         
         if !lesson.friends.contains(where: { $0.id == UserController.shared.userId }) {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Join", style: .done, target: self, action: #selector(self.didJoinButtonTapped(_:)))
@@ -135,7 +135,11 @@ extension LessonSignleVC : UICollectionViewDataSource, UICollectionViewDelegate,
         let friend = lesson.friends[indexPath.row]
         
         cell.friendName.text = friend.name
-        cell.friendPhoto.setImage(Constants.serverAddress + friend.avatar)
+        if(friend.avatar != ""){
+            cell.friendPhoto.setImage(Constants.serverAddress + friend.avatar )
+        }else{
+            cell.friendPhoto.image = UIImage(named: "male")
+        }
 
         return cell
     }

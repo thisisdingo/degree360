@@ -41,46 +41,46 @@ class FriendTableViewCell: UITableViewCell {
         delegate?.setRateFor(index, value)
         switch value {
         case 0:
-            star1.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
-            star2.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
-            star3.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
-            star4.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
-            star5.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star1.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star2.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star3.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star4.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star5.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
             break
         case 1:
-            star1.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star2.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
-            star3.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
-            star4.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
-            star5.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star1.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star2.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star3.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star4.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star5.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
             break
         case 2:
-            star1.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star2.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star3.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
-            star4.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
-            star5.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star1.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star2.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star3.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star4.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star5.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
             break
         case 3:
-            star1.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star2.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star3.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star4.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
-            star5.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star1.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star2.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star3.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star4.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star5.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
             break
         case 4:
-            star1.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star2.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star3.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star4.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star5.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
+            star1.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star2.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star3.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star4.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star5.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
             break
         case 5:
-            star1.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star2.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star3.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star4.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
-            star5.setImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star1.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star2.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star3.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star4.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
+            star5.setBackgroundImage(#imageLiteral(resourceName: "star_selected"), for: .normal)
             break
         default:
             break
