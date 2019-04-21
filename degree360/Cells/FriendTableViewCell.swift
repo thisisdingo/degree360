@@ -34,11 +34,12 @@ class FriendTableViewCell: UITableViewCell {
     }
     
     @IBAction func didStarBtnTapped(_ sender : UIButton){
+        delegate?.setRateFor(index, sender.tag)
+
         setStar(sender.tag)
     }
     
     func setStar(_ value : Int){
-        delegate?.setRateFor(index, value)
         switch value {
         case 0:
             star1.setBackgroundImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)
