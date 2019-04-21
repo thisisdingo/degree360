@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import JJHUD
 
 class LessonVC : UIViewController, LessonInteractorProtocol {
 
     @IBOutlet weak var tableView: UITableView!
 
-    
     var interactor : LessonInteractor!
     var lessons = [Lesson]()
     
@@ -30,11 +30,11 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     }
     
     func startLoading() {
-        
+        JJHUD.showLoading()
     }
     
     func hideLoading() {
-        
+        JJHUD.hide()
     }
     
     func didJoinRoom() {

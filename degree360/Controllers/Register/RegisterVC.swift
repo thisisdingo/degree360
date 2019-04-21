@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JJHUD
 
 class RegisterVC : UIViewController, RegisterInteractorProtocol {
     
@@ -14,15 +15,6 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     @IBOutlet weak var name: UITextField!
     var imagePicker: UIImagePickerController!
     @IBOutlet weak var startBtn: UIButton!
-    
-    
-    @IBAction func checkMale(_ sender: UIButton) {
-        photo.image = #imageLiteral(resourceName: "male")
-    }
-    
-    @IBAction func checkFemale(_ sender: Any) {
-        photo.image = #imageLiteral(resourceName: "female")
-    }
     
     @IBAction func clickRegister(_ sender: Any) {
         
@@ -44,11 +36,11 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     }
     
     func startLoading() {
-        
+        JJHUD.showLoading()
     }
     
     func hideLoading() {
-        
+        JJHUD.hide()
     }
     
     func successRegister() {
