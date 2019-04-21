@@ -10,10 +10,23 @@ import UIKit
 
 class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
     
+    
     @IBOutlet weak var usersCollectionView : UICollectionView!
     @IBOutlet weak var topicsTableView : UITableView!
     
     var lesson : Lesson!
+    
+    func showFriendTopics() {
+    
+    }
+    
+    func successRatingSet() {
+    
+    }
+    
+    func successRatingUpdate() {
+    
+    }
     
     func showMessage(_ message: String) {
     

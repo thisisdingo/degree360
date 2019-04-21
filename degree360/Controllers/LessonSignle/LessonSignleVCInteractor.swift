@@ -10,6 +10,14 @@ import Foundation
 
 protocol LessonSignleVCInteractorProtocol : BaseInteractorProtocol {
 
+    func showFriends()
+    
+    func showFriendTopics()
+    
+    func successRatingSet()
+    
+    func successRatingUpdate()
+    
 }
 
 class LessonSignleVCInteractor : BaseInteractor{
@@ -20,4 +28,19 @@ class LessonSignleVCInteractor : BaseInteractor{
         self.delegate = delegate
     }
     
+    func getFriends(_ lessonId: Int){
+        
+    }
+    
+    func getFriendTopics(_ userId: Int, _ lessonId: Int){
+        
+    }
+    
+    func setRaiting(_ userId: Int, _ topicId: Int, _ rating: Int){
+        
+    }
+    
+    func updateRaiting(_ userId: Int, _ topicId: Int, _ rating: Int){
+        
+    }
 }

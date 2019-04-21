@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,6 +15,7 @@
             <connections>
                 <outlet property="name" destination="fhw-Gm-eSA" id="dwP-lE-ihU"/>
                 <outlet property="photo" destination="RCz-Sv-WNa" id="lUW-1P-Pp2"/>
+                <outlet property="startBtn" destination="uV2-Lf-Nbj" id="lHE-rJ-4Ez"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Nqo-NL-Adb"/>
             </connections>
         </placeholder>
@@ -22,48 +24,62 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="male" translatesAutoresizingMaskIntoConstraints="NO" id="RCz-Sv-WNa">
-                    <rect key="frame" x="137" y="178" width="128" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="takePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="RCz-Sv-WNa">
+                    <rect key="frame" x="83" y="207" width="248" height="248"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="RCz-Sv-WNa" secondAttribute="height" multiplier="1:1" id="d4P-ea-dm8"/>
+                    </constraints>
                 </imageView>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fhw-Gm-eSA">
-                    <rect key="frame" x="76" y="411" width="249" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uV2-Lf-Nbj">
-                    <rect key="frame" x="178" y="472" width="34" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Start"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uV2-Lf-Nbj">
+                    <rect key="frame" x="83" y="512" width="248" height="42"/>
+                    <color key="backgroundColor" name="RegisterButtonBgColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <state key="normal" title="Start">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="clickRegister:" destination="-1" eventType="touchUpInside" id="zal-PW-rYm"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsN-lg-skD">
-                    <rect key="frame" x="123" y="327" width="33" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="male"/>
-                    <connections>
-                        <action selector="checkMale:" destination="-1" eventType="touchUpInside" id="ge3-I4-Ppq"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhb-KM-4Rj">
-                    <rect key="frame" x="233" y="327" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="female"/>
-                    <connections>
-                        <action selector="checkFemale:" destination="-1" eventType="touchUpInside" id="lpb-5M-t5L"/>
-                    </connections>
-                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPS-J0-fnA">
+                    <rect key="frame" x="20" y="144" width="374" height="55"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type your name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fhw-Gm-eSA">
+                    <rect key="frame" x="83" y="463" width="248" height="29"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="RegisterBG"/>
+            <constraints>
+                <constraint firstItem="RCz-Sv-WNa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="83" id="2yi-qV-3GX"/>
+                <constraint firstItem="XPS-J0-fnA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="C6B-uU-4ZW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uV2-Lf-Nbj" secondAttribute="trailing" constant="83" id="Itw-yu-nmP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RCz-Sv-WNa" secondAttribute="trailing" constant="83" id="NyH-zO-gJM"/>
+                <constraint firstItem="RCz-Sv-WNa" firstAttribute="top" secondItem="XPS-J0-fnA" secondAttribute="bottom" constant="8" id="SiP-iH-Ges"/>
+                <constraint firstItem="XPS-J0-fnA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="aPd-fd-aut"/>
+                <constraint firstItem="uV2-Lf-Nbj" firstAttribute="top" secondItem="fhw-Gm-eSA" secondAttribute="bottom" constant="20" id="cOT-PW-BVP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fhw-Gm-eSA" secondAttribute="trailing" constant="83" id="cRa-aF-ECQ"/>
+                <constraint firstItem="fhw-Gm-eSA" firstAttribute="top" secondItem="RCz-Sv-WNa" secondAttribute="bottom" constant="8" id="fcu-PJ-BBh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XPS-J0-fnA" secondAttribute="trailing" constant="20" id="tCn-gW-Auy"/>
+                <constraint firstItem="fhw-Gm-eSA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="83" id="x3c-OC-joH"/>
+                <constraint firstItem="uV2-Lf-Nbj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="83" id="yBr-x9-Itf"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
     <resources>
-        <image name="male" width="122" height="128"/>
+        <image name="takePhoto" width="500" height="358"/>
+        <namedColor name="RegisterBG">
+            <color red="0.90980392156862744" green="0.29803921568627451" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="RegisterButtonBgColor">
+            <color red="0.95294117647058818" green="0.61176470588235299" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

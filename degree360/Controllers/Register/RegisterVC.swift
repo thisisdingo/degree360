@@ -13,6 +13,7 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var name: UITextField!
     var imagePicker: UIImagePickerController!
+    @IBOutlet weak var startBtn: UIButton!
     
     
     @IBAction func checkMale(_ sender: UIButton) {
@@ -62,6 +63,8 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.takePhoto))
         photo.addGestureRecognizer(tap)
         photo.isUserInteractionEnabled = true
+        startBtn.layer.cornerRadius = 25
+        self.addLineToView(view: name, position:.LINE_POSITION_BOTTOM, color: UIColor.white, width: 1)
     }
     
     static func getVC() -> RegisterVC{
@@ -90,6 +93,33 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
         imagePicker.sourceType = fromCamera ? .camera : .photoLibrary
 
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    enum LINE_POSITION {
+        case LINE_POSITION_TOP
+        case LINE_POSITION_BOTTOM
+    }
+    
+    func addLineToView(view : UIView, position : LINE_POSITION, color: UIColor, width: Double) {
+        let lineView = UIView()
+        lineView.backgroundColor = color
+        lineView.translatesAutoresizingMaskIntoConstraints = false // This is important!
+        view.addSubview(lineView)
+        
+        let metrics = ["width" : NSNumber(value: width)]
+        let views = ["lineView" : lineView]
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lineView]|", options:NSLayoutConstraint.FormatOptions(rawValue: 0), metrics:metrics, views:views))
+        
+        switch position {
+        case .LINE_POSITION_TOP:
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lineView(width)]", options:NSLayoutConstraint.FormatOptions(rawValue: 0), metrics:metrics, views:views))
+            break
+        case .LINE_POSITION_BOTTOM:
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[lineView(width)]|", options:NSLayoutConstraint.FormatOptions(rawValue: 0), metrics:metrics, views:views))
+            break
+        default:
+            break
+        }
     }
 }
 
