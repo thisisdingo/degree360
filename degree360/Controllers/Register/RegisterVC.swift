@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JJHUD
 
 class RegisterVC : UIViewController, RegisterInteractorProtocol {
     
@@ -35,11 +36,11 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
     }
     
     func startLoading() {
-        
+        JJHUD.showLoading()
     }
     
     func hideLoading() {
-        
+        JJHUD.hide()
     }
     
     func successRegister() {

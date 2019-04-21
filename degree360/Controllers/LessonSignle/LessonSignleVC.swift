@@ -19,6 +19,10 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
     @IBOutlet weak var usersCollectionView : UICollectionView!
     @IBOutlet weak var topicsTableView : UITableView!
     
+    @IBOutlet weak var lessonId : UILabel!
+    @IBOutlet weak var lessonTitle : UILabel!
+    
+    
     var lesson : Lesson!
     var selectedUserIndex = 0
     var usersRates = [String : [String : Int]]()
@@ -81,6 +85,10 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
         interactor = LessonSignleVCInteractor(self)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.addSaveTapped(_:)))
+        
+        
+        lessonId.text = "Your lesson id: " + lesson.id
+        lessonTitle.text = "Lesson name: " + lesson.title
     }
     
     @objc func addSaveTapped(_ sender : Any) {

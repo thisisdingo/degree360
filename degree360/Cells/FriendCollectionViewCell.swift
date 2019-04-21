@@ -16,6 +16,9 @@ class FriendCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
+        friendPhoto.layer.cornerRadius = friendPhoto.frame.height / 2
     }
 
 }
