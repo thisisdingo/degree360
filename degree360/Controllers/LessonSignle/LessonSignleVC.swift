@@ -9,17 +9,25 @@
 import UIKit
 
 class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
+    func showFriends() {
+        
+    }
+    
+    func showFriendTopics(_ topics: [Topic]) {
+        
+    }
+    
     
     
     @IBOutlet weak var usersCollectionView : UICollectionView!
     @IBOutlet weak var topicsTableView : UITableView!
     
     var lesson : Lesson!
+    var selectedUserIndex = 0
+    //            user_id : [topic_id : rate]
+    var answers = [String : [String : Int]]()
     
-    func showFriends() {
-        
-    }
-
+    
     func showFriendTopics() {
     
     }
@@ -84,6 +92,11 @@ extension LessonSignleVC : UICollectionViewDataSource, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedUserIndex = indexPath.row
+        self.topicsTableView.reloadData()
+    }
 }
 
 extension LessonSignleVC : UITableViewDelegate, UITableViewDataSource {
@@ -93,8 +106,14 @@ extension LessonSignleVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTableViewCell") as! FriendTableViewCell
+        let topic = lesson.topics[indexPath.row]
         
-        cell.answerLabel.text = lesson.topics[indexPath.row].title
+        cell.answerLabel.text = topic.title
+        
+        if let rate = answers[lesson.friends[selectedUserIndex].id], let stars = rate[topic.id] {
+            cell.setStar(stars)
+        }
+
         
         return cell
     }

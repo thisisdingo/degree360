@@ -99,4 +99,15 @@ class API {
         })
     }
     
+    func getLessonById(_ id : String,  _ c : @escaping callback){
+        Indigear.run(Constants.serverAddress + "api/lesson/\(id)") { res in
+            if let err = res.error {
+                c(nil, err.localizedDescription)
+            }else{
+                c(JSON(res.result!), nil)
+            }
+        }
+        
+    }
+    
 }

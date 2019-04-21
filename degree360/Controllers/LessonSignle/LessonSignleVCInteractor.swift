@@ -11,16 +11,14 @@ import Foundation
 protocol LessonSignleVCInteractorProtocol : BaseInteractorProtocol {
 
     func showFriends()
-    
-    func showFriendTopics()
-    
+    func showFriendTopics(_ topics : [Topic])
     func successRatingSet()
     
     func successRatingUpdate()
     
 }
 
-class LessonSignleVCInteractor : BaseInteractor{
+class LessonSignleVCInteractor : BaseInteractor {
     
     init(_ delegate : LessonSignleVCInteractorProtocol){
         super.init()
@@ -29,7 +27,7 @@ class LessonSignleVCInteractor : BaseInteractor{
     }
     
     func getFriends(_ lessonId: Int){
-        
+
     }
     
     func getFriendTopics(_ userId: Int, _ lessonId: Int){
