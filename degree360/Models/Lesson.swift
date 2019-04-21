@@ -9,6 +9,8 @@
 import Foundation
 import SwiftyJSON
 
+
+
 struct Lesson {
     var id : String
     var title : String

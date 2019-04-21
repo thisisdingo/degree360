@@ -17,6 +17,8 @@ class LessonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.hero.isEnabled = true
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

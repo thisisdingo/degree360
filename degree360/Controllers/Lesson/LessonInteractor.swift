@@ -37,6 +37,8 @@ class LessonInteractor : BaseInteractor {
                     self.delegate?.showMessage(res!.errorMessage)
                 }else{
                     
+                    print(res!)
+                    
                     let lessons = res!.arrayValue.map({ Lesson($0["lesson"]) })
                     
                     

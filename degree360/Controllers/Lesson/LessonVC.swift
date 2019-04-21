@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 import JJHUD
 
 class LessonVC : UIViewController, LessonInteractorProtocol {
@@ -43,7 +44,9 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     
     override func viewDidLoad() {
         self.interactor = LessonInteractor(self)
+        self.hero.isEnabled = true
         initViews()
+        self.hero.modalAnimationType = .selectBy(presenting:.zoom, dismissing:.zoomOut)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,9 +59,8 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     }
     
     func initViews(){
-        let createBtn = UIBarButtonItem(title: "NEW", style: .done, target: self, action: #selector(self.addButtonTapped(_:)))
-        self.navigationItem.rightBarButtonItem = createBtn
-        let joinBtn = UIBarButtonItem(title: "JOIN", style: .done, target: self, action: #selector(self.joinButtonTapped(_:)))
+
+        let joinBtn = UIBarButtonItem(title: "Action", style: .done, target: self, action: #selector(self.joinButtonTapped(_:)))
         self.navigationItem.leftBarButtonItem = joinBtn
         
         tableView.dataSource = self
@@ -67,11 +69,28 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
         tableView.register(UINib.init(nibName: "LessonTableViewCell", bundle: nil), forCellReuseIdentifier: "LessonTableViewCell")
     }
     
-    @objc func addButtonTapped(_ sender : UIBarButtonItem){
+    @objc func addButtonTapped(){
         self.navigationController?.pushViewController(LessonCreateVC.getVC(), animated: true)
     }
     
     @objc func joinButtonTapped(_ sender : UIBarButtonItem){
+        let alert = UIAlertController(title: "Choose variant", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Join", style: .default, handler: { [weak self] _ in
+            self?.join()
+        }))
+        alert.addAction(UIAlertAction(title: "Create new room", style: .default, handler: { [weak self] _ in
+            self?.addButtonTapped()
+        }))
+        alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: { [weak self] _ in
+            UserController.shared.dropUserData()
+            self?.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func join(){
         let alert = UIAlertController(title: "Join lesson", message: "Please, enter your lesson ID", preferredStyle: .alert)
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "Room id"

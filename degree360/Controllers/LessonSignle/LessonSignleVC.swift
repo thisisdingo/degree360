@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 struct TopicRate {
     var topicId : String
@@ -15,13 +16,19 @@ struct TopicRate {
 
 
 class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
+    func didJoined(_ lesson : Lesson) {
+        self.lesson = lesson
+        setContent()
+    }
+    
 
     @IBOutlet weak var usersCollectionView : UICollectionView!
     @IBOutlet weak var topicsTableView : UITableView!
     
     @IBOutlet weak var lessonId : UILabel!
     @IBOutlet weak var lessonTitle : UILabel!
-    
+    @IBOutlet weak var currentUser : UILabel!
+
     
     var lesson : Lesson!
     var selectedUserIndex = 0
@@ -64,35 +71,54 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hero.isEnabled = true
+        
         usersCollectionView.register(UINib.init(nibName: "FriendCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FriendCollectionViewCell")
         usersCollectionView.dataSource = self
         usersCollectionView.delegate = self
-        usersCollectionView.reloadData()
         
         topicsTableView.register(UINib.init(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendTableViewCell")
         topicsTableView.dataSource = self
         topicsTableView.delegate = self
-        topicsTableView.reloadData()
         
         // init answers
+        
+        
+        interactor = LessonSignleVCInteractor(self)
+        setContent()
+        
+    }
+    
+    func setContent(){
+        
         lesson.friends.forEach({ friend in
             usersRates[friend.id] = [String : Int]()
             lesson.topics.forEach({ topic in
-                usersRates[friend.id]![topic.id] = 0
+                
+                if let rate = topic.rates.first(where: { $0.userId == friend.id }) {
+                    usersRates[friend.id]![topic.id] = rate.value
+                }else{
+                    usersRates[friend.id]![topic.id] = 0
+                }
             })
         })
         
-        interactor = LessonSignleVCInteractor(self)
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.addSaveTapped(_:)))
-        
-        
         lessonId.text = "Your lesson id: " + lesson.id
         lessonTitle.text = "Lesson name: " + lesson.title
+        
+        if !lesson.friends.contains(where: { $0.id == UserController.shared.userId }) {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Join", style: .done, target: self, action: #selector(self.didJoinButtonTapped(_:)))
+        }else{
+            self.navigationItem.rightBarButtonItem = nil
+        }
+        
+        topicsTableView.reloadData()
+        usersCollectionView.reloadData()
+
     }
     
-    @objc func addSaveTapped(_ sender : Any) {
-        
+    @objc func didJoinButtonTapped(_ sender : Any) {
+        interactor.joinTapped(self.lesson.id)
     }
     
     
@@ -124,6 +150,7 @@ extension LessonSignleVC : UICollectionViewDataSource, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedUserIndex = indexPath.row
+        self.currentUser.text = lesson.friends[selectedUserIndex].name
         self.topicsTableView.reloadData()
     }
 }

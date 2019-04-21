@@ -46,6 +46,7 @@ class RegisterInteractor : BaseInteractor {
                 self.delegate?.hideLoading()
                 self.delegate?.showMessage(err)
             }else{
+                print(json!)
                 if json!.hasError {
                     self.delegate?.hideLoading()
                     self.delegate?.showMessage(json!.errorMessage)

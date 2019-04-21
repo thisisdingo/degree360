@@ -18,7 +18,7 @@ class FriendCollectionViewCell: UICollectionViewCell {
         // Initialization code
         
         
-        friendPhoto.layer.cornerRadius = friendPhoto.frame.height / 2
     }
 
+    
 }
