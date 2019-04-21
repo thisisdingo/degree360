@@ -16,6 +16,10 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
     
     var lesson : Lesson!
     
+    func showFriends() {
+        
+    }
+
     func showFriendTopics() {
     
     }
