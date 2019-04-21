@@ -47,8 +47,8 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
         self.hero.isEnabled = true
         initViews()
         self.hero.modalAnimationType = .selectBy(presenting:.zoom, dismissing:.zoomOut)
-        
-        title = "My progress"
+        self.tableView.separatorStyle = .none
+        title = "degree360"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,7 +63,7 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
     func initViews(){
 
         let joinBtn = UIBarButtonItem(title: "Action", style: .done, target: self, action: #selector(self.joinButtonTapped(_:)))
-        self.navigationItem.leftBarButtonItem = joinBtn
+        self.navigationItem.rightBarButtonItem = joinBtn
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -133,6 +133,9 @@ extension LessonVC : UITableViewDelegate, UITableViewDataSource {
         
         let vc = LessonSignleVC.getVC()
         vc.lesson = lessons[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        self.present(vc, animated: true, completion: nil)
+        
+        //self.navigationController?.pushViewController(vc, animated: true)
     }
 }

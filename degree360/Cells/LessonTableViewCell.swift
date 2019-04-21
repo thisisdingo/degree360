@@ -13,12 +13,19 @@ class LessonTableViewCell: UITableViewCell {
     @IBOutlet weak var lessonName: UILabel!
     @IBOutlet weak var topicsCount: UILabel! // "There are 5 topics"
     @IBOutlet weak var myLessonScore: UIProgressView!
+    @IBOutlet weak var bgView : UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.hero.isEnabled = true
-
+        bgView.layer.cornerRadius = 10
+        
+        // shadow
+        bgView.layer.shadowColor = UIColor.black.cgColor
+        bgView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        bgView.layer.shadowOpacity = 0.7
+        bgView.layer.shadowRadius = 4.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

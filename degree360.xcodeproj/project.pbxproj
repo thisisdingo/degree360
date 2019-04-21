@@ -16,6 +16,7 @@
 		652A8F5D226B34F500D5CC24 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F5C226B34F500D5CC24 /* Topic.swift */; };
 		652A8F5F226B430B00D5CC24 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F5E226B430B00D5CC24 /* Extension+UIImageView.swift */; };
 		652A8F61226B6FBC00D5CC24 /* StarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652A8F60226B6FBC00D5CC24 /* StarButton.swift */; };
+		6593123F226C55A00061C98F /* Hero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6593123E226C55A00061C98F /* Hero.framework */; };
 		65EC7C4E226ACFB800D69565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C4D226ACFB800D69565 /* AppDelegate.swift */; };
 		65EC7C50226ACFB800D69565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7C4F226ACFB800D69565 /* ViewController.swift */; };
 		65EC7C53226ACFB800D69565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65EC7C51226ACFB800D69565 /* Main.storyboard */; };
@@ -76,6 +77,8 @@
 		652A8F5C226B34F500D5CC24 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		652A8F5E226B430B00D5CC24 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		652A8F60226B6FBC00D5CC24 /* StarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButton.swift; sourceTree = "<group>"; };
+		6593123A226C55960061C98F /* Hero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6593123E226C55A00061C98F /* Hero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EC7C4A226ACFB800D69565 /* degree360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = degree360.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EC7C4D226ACFB800D69565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65EC7C4F226ACFB800D69565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6593123F226C55A00061C98F /* Hero.framework in Frameworks */,
 				8799A10C9E860347D1651CC0 /* Pods_degree360.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +174,7 @@
 		65EC7C41226ACFB800D69565 = {
 			isa = PBXGroup;
 			children = (
+				6593123A226C55960061C98F /* Hero.framework */,
 				65EC7C4C226ACFB800D69565 /* degree360 */,
 				652A8F53226B08C800D5CC24 /* degree360Tests */,
 				65EC7C4B226ACFB800D69565 /* Products */,
@@ -318,6 +323,7 @@
 		F790E9930D818B601EF481E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6593123E226C55A00061C98F /* Hero.framework */,
 				E7984BA49C568AB59F042573 /* Pods_degree360.framework */,
 			);
 			name = Frameworks;
