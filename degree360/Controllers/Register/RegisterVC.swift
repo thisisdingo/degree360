@@ -57,6 +57,8 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
         photo.isUserInteractionEnabled = true
         startBtn.layer.cornerRadius = 25
         self.addLineToView(view: name, position:.LINE_POSITION_BOTTOM, color: UIColor.white, width: 1)
+        
+        name.delegate = self
     }
     
     static func getVC() -> RegisterVC{
@@ -116,7 +118,7 @@ class RegisterVC : UIViewController, RegisterInteractorProtocol {
 }
 
 
-extension RegisterVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension RegisterVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
@@ -129,6 +131,11 @@ extension RegisterVC : UIImagePickerControllerDelegate, UINavigationControllerDe
         // print out the image size as a test
         print(image.size)
         photo.image = image
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
     

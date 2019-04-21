@@ -48,7 +48,7 @@ class LessonVC : UIViewController, LessonInteractorProtocol {
         initViews()
         self.hero.modalAnimationType = .selectBy(presenting:.zoom, dismissing:.zoomOut)
         self.tableView.separatorStyle = .none
-        title = "degree360"
+        title = "Progress yourself"
     }
     
     override func viewDidAppear(_ animated: Bool) {

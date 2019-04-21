@@ -16,6 +16,15 @@ struct TopicRate {
 
 
 class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
+    func getStatsForUsers(_ rates: [User]) {
+        self.rates = rates
+        self.topicsTableView.reloadData()
+    }
+    
+    
+    
+
+    
     func gotMeRateForUser(_ rate: Rate) {
         
     }
@@ -34,6 +43,7 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
     @IBOutlet weak var currentUser : UILabel!
     @IBOutlet weak var closeBtn : UIButton!
 
+    var rates = [User]()
     
     var lesson : Lesson!
     var selectedUserIndex = 0
@@ -106,6 +116,8 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
         closeBtn.layer.shadowOffset = CGSize(width: 3, height: 3)
         closeBtn.layer.shadowOpacity = 0.7
         closeBtn.layer.shadowRadius = 10
+        
+        interactor.fetchStats(lesson.id)
         
     }
     
@@ -187,7 +199,7 @@ extension LessonSignleVC : UICollectionViewDataSource, UICollectionViewDelegate,
         self.currentUser.text = lesson.friends[selectedUserIndex].name
         self.topicsTableView.reloadData()
         
-        self.usersCollectionView.reloadItems(at: [indexPath])
+        self.usersCollectionView.reloadData()
     }
 }
 
@@ -214,8 +226,8 @@ extension LessonSignleVC : UITableViewDelegate, UITableViewDataSource, FriendTab
         cell.answerLabel.text = topic.title
         cell.delegate = self
         
-        if let star = usersRates[userId]?[topic.id] {
-            cell.setStar(star)
+        if let rates = rates.first(where: { $0.id == userId })?.rates.first(where: { $0.topic_id == topic.id }) {
+            cell.setStar(Int(rates.value) ?? 1)
         }
         
         return cell

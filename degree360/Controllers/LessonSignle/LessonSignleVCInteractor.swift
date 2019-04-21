@@ -8,6 +8,10 @@
 
 import Foundation
 
+
+
+
+
 protocol LessonSignleVCInteractorProtocol : BaseInteractorProtocol {
 
     func showFriends()
@@ -18,7 +22,7 @@ protocol LessonSignleVCInteractorProtocol : BaseInteractorProtocol {
     
     func didJoined(_ lesson : Lesson)
     func gotMeRateForUser(_ rate: Rate)
-    
+    func getStatsForUsers(_ rates : [User])
 }
 
 class LessonSignleVCInteractor : BaseInteractor {
@@ -79,5 +83,24 @@ class LessonSignleVCInteractor : BaseInteractor {
                 }
             }
         }
+    }
+    
+    func fetchStats(_ lessonId : String){
+        api.getStatsForLesson(lessonId, { res, err in
+            
+            if let err = err {
+                self.delegate?.showMessage(err)
+            }else{
+                if res!.hasError {
+                    self.delegate?.showMessage(res!.errorMessage)
+                }else{
+                    let stats = res!["friends"].arrayValue.map({ User($0["user"]) })
+                    print(res!)
+
+                    (self.delegate as? LessonSignleVCInteractorProtocol)?.getStatsForUsers(stats)
+                }
+            }
+            
+        })
     }
 }

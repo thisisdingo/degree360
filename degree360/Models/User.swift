@@ -13,6 +13,7 @@ struct User {
     var id : String
     var name : String
     var avatar : String
+    var rates = [Rate]()
     
     init() {
         self.id = ""
@@ -24,6 +25,7 @@ struct User {
         self.id = json["id"].stringValue
         self.name = json["name"].stringValue
         self.avatar = json["avatar"].stringValue
+        self.rates = json["rates"].arrayValue.map({ Rate($0) })
     }
     
 }
