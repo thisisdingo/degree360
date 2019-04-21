@@ -110,4 +110,20 @@ class API {
         
     }
     
+    
+    func rateFriend(_ userId : String, _ topicId : String, _ value : String, _ c : @escaping callback){
+        let dic : [String : Any] = ["uid" : UserController.shared.userId,
+                                    "friend_id" : userId,
+                                    "topic_id" : topicId,
+                                    "value" : value]
+        
+        Indigear.run(Constants.serverAddress + "api/rate", method: .post, headers: headers, body: toJSON(dic), { res in
+            if let err = res.error {
+                c(nil, err.localizedDescription)
+            }else{
+                c(JSON(res.result!), nil)
+            }
+        })
+    }
+    
 }

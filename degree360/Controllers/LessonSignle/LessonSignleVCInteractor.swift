@@ -25,20 +25,21 @@ class LessonSignleVCInteractor : BaseInteractor {
         
         self.delegate = delegate
     }
-    
-    func getFriends(_ lessonId: Int){
 
-    }
-    
-    func getFriendTopics(_ userId: Int, _ lessonId: Int){
-        
-    }
-    
-    func setRaiting(_ userId: Int, _ topicId: Int, _ rating: Int){
-        
-    }
-    
-    func updateRaiting(_ userId: Int, _ topicId: Int, _ rating: Int){
-        
+    func setRaiting(_ userId: String, _ topicId: String, _ rating: Int){
+        api.rateFriend(userId, topicId, String(rating)){ res, err in
+            
+            self.delegate?.hideLoading()
+            
+            if let err = err {
+                self.delegate?.showMessage(err)
+            }else{
+                if res!.hasError {
+                    self.delegate?.showMessage(res!.errorMessage)
+                }else{
+                    (self.delegate as? LessonSignleVCInteractorProtocol)?.successRatingSet()
+                }
+            }
+        }
     }
 }

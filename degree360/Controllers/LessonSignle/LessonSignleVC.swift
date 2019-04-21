@@ -23,6 +23,8 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
     var selectedUserIndex = 0
     var usersRates = [String : [String : Int]]()
     
+    var interactor : LessonSignleVCInteractor!
+    
     func showFriends() {
         
     }
@@ -75,7 +77,14 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
                 usersRates[friend.id]![topic.id] = 0
             })
         })
-
+        
+        interactor = LessonSignleVCInteractor(self)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.addSaveTapped(_:)))
+    }
+    
+    @objc func addSaveTapped(_ sender : Any) {
+        
     }
     
     
@@ -118,6 +127,7 @@ extension LessonSignleVC : UITableViewDelegate, UITableViewDataSource, FriendTab
         
         usersRates[userId]?[topicId] = rate
         
+        self.interactor.setRaiting(userId, topicId, rate)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
