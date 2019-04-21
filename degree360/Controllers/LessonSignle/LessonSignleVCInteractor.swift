@@ -17,6 +17,7 @@ protocol LessonSignleVCInteractorProtocol : BaseInteractorProtocol {
     func successRatingUpdate()
     
     func didJoined(_ lesson : Lesson)
+    func gotMeRateForUser(_ rate: Rate)
     
 }
 
@@ -58,6 +59,23 @@ class LessonSignleVCInteractor : BaseInteractor {
                     self.delegate?.showMessage(res!.errorMessage)
                 }else{
                     (self.delegate as? LessonSignleVCInteractorProtocol)?.didJoined(Lesson(res!))
+                }
+            }
+        }
+    }
+    
+    func getMyRateForThisUser(_ userId: String, _ topicId: String){
+        api.getMyRateForUser(userId, topicId){ res, err in
+            
+            self.delegate?.hideLoading()
+            
+            if let err = err {
+                self.delegate?.showMessage(err)
+            }else{
+                if res!.hasError {
+                    self.delegate?.showMessage(res!.errorMessage)
+                }else{
+                    (self.delegate as? LessonSignleVCInteractorProtocol)?.gotMeRateForUser(Rate(res!))
                 }
             }
         }

@@ -16,6 +16,10 @@ struct TopicRate {
 
 
 class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
+    func gotMeRateForUser(_ rate: Rate) {
+        
+    }
+    
     func didJoined(_ lesson : Lesson) {
         self.lesson = lesson
         setContent()

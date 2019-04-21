@@ -51,6 +51,7 @@
 		E1B6189A226B0552008B7B63 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B61898226B0552008B7B63 /* FriendTableViewCell.xib */; };
 		E1B6189D226B3BC1008B7B63 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6189B226B3BC1008B7B63 /* FriendCollectionViewCell.swift */; };
 		E1B6189E226B3BC1008B7B63 /* FriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1B6189C226B3BC1008B7B63 /* FriendCollectionViewCell.xib */; };
+		E1B618A0226C5BD5008B7B63 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6189F226C5BD5008B7B63 /* Rate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		E1B61898226B0552008B7B63 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 		E1B6189B226B3BC1008B7B63 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1B6189C226B3BC1008B7B63 /* FriendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCollectionViewCell.xib; sourceTree = "<group>"; };
+		E1B6189F226C5BD5008B7B63 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 		E7984BA49C568AB59F042573 /* Pods_degree360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_degree360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC04FBF8D93B3012AA13E25E /* Pods-degree360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-degree360.debug.xcconfig"; path = "Target Support Files/Pods-degree360/Pods-degree360.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +156,7 @@
 				652A8F47226B00C800D5CC24 /* Lesson.swift */,
 				652A8F4A226B01A800D5CC24 /* User.swift */,
 				652A8F5C226B34F500D5CC24 /* Topic.swift */,
+				E1B6189F226C5BD5008B7B63 /* Rate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				E1B61876226AEBDA008B7B63 /* LessonInteractor.swift in Sources */,
 				652A8F46226AFCA000D5CC24 /* Helpers.swift in Sources */,
 				65EC7C6B226ADF7700D69565 /* UserController.swift in Sources */,
+				E1B618A0226C5BD5008B7B63 /* Rate.swift in Sources */,
 				E1B6187D226AF396008B7B63 /* LessonSignleVCInteractor.swift in Sources */,
 				65EC7C50226ACFB800D69565 /* ViewController.swift in Sources */,
 				65EC7C63226AD48F00D69565 /* BaseInteractor.swift in Sources */,

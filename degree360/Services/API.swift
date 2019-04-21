@@ -127,4 +127,18 @@ class API {
         })
     }
     
+    func getMyRateForUser(_ userId : String, _ topicId : String, _ c : @escaping callback){
+        let dic : [String : Any] = ["uid" : UserController.shared.userId,
+                                    "user_id" : userId,
+                                    "topic_id" : topicId]
+        
+        Indigear.run(Constants.serverAddress + "api/lesson/myrates", method: .post, headers: headers, body: toJSON(dic), { res in
+            if let err = res.error {
+                c(nil, err.localizedDescription)
+            }else{
+                c(JSON(res.result!), nil)
+            }
+        })
+    }
+    
 }
