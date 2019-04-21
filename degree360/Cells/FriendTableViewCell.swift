@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol FriendTableViewCellProtocol : class {
+    func setRateFor(_ index : Int, _ rate : Int)
+}
+
 class FriendTableViewCell: UITableViewCell {
 
     @IBOutlet weak var answerLabel: UILabel!
+    var index : Int = 0
+    
+    weak var delegate : FriendTableViewCellProtocol?
     
     @IBOutlet weak var star1: UIButton!
     @IBOutlet weak var star2: UIButton!
@@ -20,13 +27,10 @@ class FriendTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     @IBAction func didStarBtnTapped(_ sender : UIButton){
@@ -34,7 +38,7 @@ class FriendTableViewCell: UITableViewCell {
     }
     
     func setStar(_ value : Int){
-        
+        delegate?.setRateFor(index, value)
         switch value {
         case 0:
             star1.setImage(#imageLiteral(resourceName: "star_unselected"), for: .normal)

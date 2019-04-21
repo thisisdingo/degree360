@@ -8,7 +8,21 @@
 
 import UIKit
 
+struct TopicRate {
+    var topicId : String
+    var rate : Int
+}
+
+
 class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
+
+    @IBOutlet weak var usersCollectionView : UICollectionView!
+    @IBOutlet weak var topicsTableView : UITableView!
+    
+    var lesson : Lesson!
+    var selectedUserIndex = 0
+    var usersRates = [String : [String : Int]]()
+    
     func showFriends() {
         
     }
@@ -16,17 +30,6 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
     func showFriendTopics(_ topics: [Topic]) {
         
     }
-    
-    
-    
-    @IBOutlet weak var usersCollectionView : UICollectionView!
-    @IBOutlet weak var topicsTableView : UITableView!
-    
-    var lesson : Lesson!
-    var selectedUserIndex = 0
-    //            user_id : [topic_id : rate]
-    var answers = [String : [String : Int]]()
-    
     
     func showFriendTopics() {
     
@@ -64,6 +67,15 @@ class LessonSignleVC : UIViewController, LessonSignleVCInteractorProtocol {
         topicsTableView.dataSource = self
         topicsTableView.delegate = self
         topicsTableView.reloadData()
+        
+        // init answers
+        lesson.friends.forEach({ friend in
+            usersRates[friend.id] = [String : Int]()
+            lesson.topics.forEach({ topic in
+                usersRates[friend.id]![topic.id] = 0
+            })
+        })
+
     }
     
     
@@ -99,21 +111,31 @@ extension LessonSignleVC : UICollectionViewDataSource, UICollectionViewDelegate,
     }
 }
 
-extension LessonSignleVC : UITableViewDelegate, UITableViewDataSource {
+extension LessonSignleVC : UITableViewDelegate, UITableViewDataSource, FriendTableViewCellProtocol {
+    func setRateFor(_ index: Int, _ rate: Int) {
+        let userId = lesson.friends[selectedUserIndex].id
+        let topicId = lesson.topics[index].id
+        
+        usersRates[userId]?[topicId] = rate
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lesson.topics.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTableViewCell") as! FriendTableViewCell
+        let userId = lesson.friends[selectedUserIndex].id
         let topic = lesson.topics[indexPath.row]
         
+        cell.index = indexPath.row
         cell.answerLabel.text = topic.title
+        cell.delegate = self
         
-        if let rate = answers[lesson.friends[selectedUserIndex].id], let stars = rate[topic.id] {
-            cell.setStar(stars)
+        if let star = usersRates[userId]?[topic.id] {
+            cell.setStar(star)
         }
-
         
         return cell
     }

@@ -8,4 +8,6 @@ target 'degree360' do
   # Pods for degree360
   pod 'Indigear'
   pod 'SwiftyJSON'
+  pod 'JJHUD'
+  
 end
